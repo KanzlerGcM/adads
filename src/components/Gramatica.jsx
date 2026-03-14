@@ -32,6 +32,33 @@ export default function Gramatica() {
       <h2 className="page-title">🏗️ Gramática</h2>
       <p className="page-subtitle">Estruturas essenciais do vietnamita explicadas de forma simples.</p>
 
+      {/* Intro: 5 pontos */}
+      <div className="card" style={{ marginBottom: 16, background: "linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%)", border: "1.5px solid #c7d2fe" }}>
+        <div className="card-title">⚡ Gramática Vietnamita em 5 Pontos</div>
+        <p style={{ fontSize: 13, color: "var(--text-muted)", marginBottom: 14 }}>
+          Antes de mergulhar nas regras específicas, entenda o que torna o
+          vietnamita diferente do português. Estes 5 pontos explicam 80% da
+          gramática.
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(210px, 1fr))", gap: 10 }}>
+          {[
+            { n: "1", titulo: "Sem conjugação", cor: "#4f46e5", desc: '"Ăn" = comer para todo mundo. O verbo nunca muda — nem por pessoa (eu/você/ele), nem por tempo (passado/futuro).' },
+            { n: "2", titulo: "Ordem igual ao PT", cor: "#0891b2", desc: 'SVO — Sujeito + Verbo + Objeto. "Tôi ăn phở" = Eu como phở. Estrutura idêntica ao português!' },
+            { n: "3", titulo: "Adjetivo APÓS o nome", cor: "#7c3aed", desc: '"Casa bonita" vira "nhà đẹp" (lit. casa bonita). O adjetivo fica depois do substantivo — também igual ao português!' },
+            { n: "4", titulo: "Sem gênero ou plural", cor: "#059669", desc: 'Sem masculino/feminino. Sem -s de plural. "Người" = pessoa ou pessoas. O contexto e os numerais fazem esse trabalho.' },
+            { n: "5", titulo: "Pronome = relação", cor: "#b45309", desc: 'Não existe um único "eu" ou "você". O pronome muda conforme a idade e relação entre as pessoas (Anh, Chị, Em, Ông, Bà...).' },
+          ].map((p) => (
+            <div key={p.n} style={{ background: "#ffffff", borderRadius: 9, padding: "12px 14px", border: `1.5px solid ${p.cor}25` }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+                <div style={{ width: 24, height: 24, borderRadius: 6, background: p.cor, color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 12, flexShrink: 0 }}>{p.n}</div>
+                <span style={{ fontWeight: 700, fontSize: 13, color: "var(--text)" }}>{p.titulo}</span>
+              </div>
+              <p style={{ fontSize: 12, color: "var(--text-muted)", lineHeight: 1.55 }}>{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <RuleCard
         title="1. Verbo SER / ESTAR → LÀ"
         note="⚠️ Em vietnamita, 'ser/estar' tem UMA única forma: LÀ — não muda para nenhum pronome!"

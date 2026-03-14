@@ -105,8 +105,6 @@ export default function Vocabulario() {
         </div>
       </div>
 
-      <LegendaCategorias />
-
       <div className="card">
         <div className="search-wrap">
           <span className="search-icon">🔍</span>
@@ -185,6 +183,8 @@ export default function Vocabulario() {
           </table>
         </div>
       </div>
+
+      <LegendaCategorias />
     </div>
   );
 }

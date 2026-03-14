@@ -60,7 +60,7 @@ body {
 .sidebar-header p { font-size: 11px; color: var(--sidebar-text); margin-top: 2px; }
 .sidebar-section-label {
   font-size: 10px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.08em; color: #4a5568; padding: 16px 18px 6px;
+  letter-spacing: 0.08em; color: rgba(255,255,255,0.28); padding: 16px 18px 6px;
 }
 .sidebar nav { padding: 8px 10px; flex: 1; }
 .nav-btn {
@@ -154,8 +154,8 @@ body {
 .flash-btn:disabled { opacity: 0.35; cursor: default; }
 .flash-btn.nav  { background: #f1f5f9; color: var(--text); }
 .flash-btn.nav:hover:not(:disabled) { background: var(--border); }
-.flash-btn.no   { background: #fef2f2; color: #b91c1c; }
-.flash-btn.no:hover  { background: #fee2e2; }
+.flash-btn.no   { background: #fef3c7; color: #92400e; }
+.flash-btn.no:hover  { background: #fde68a; }
 .flash-btn.yes  { background: var(--success-light); color: var(--success-dark); }
 .flash-btn.yes:hover { background: #bbf7d0; }
 .deck-done { text-align: center; margin-top: 18px; padding: 16px; background: var(--success-light); border-radius: var(--radius); border: 1px solid #bbf7d0; }
@@ -176,7 +176,7 @@ body {
 
 .vn-big { font-size: 17px; font-weight: 700; }
 .correct { color: #059669; font-weight: 700; }
-.wrong   { color: #dc2626; text-decoration: line-through; opacity: 0.65; }
+.wrong   { color: #b45309; text-decoration: line-through; opacity: 0.65; }
 
 .tone-num-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 10px; margin-top: 8px; }
 .tone-num-card { background: var(--bg-card); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 14px 8px; text-align: center; }

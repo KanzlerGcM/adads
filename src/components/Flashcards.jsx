@@ -102,19 +102,23 @@ export default function Flashcards() {
 
       <div className="card">
         {/* Controls top */}
-        <div className="flash-controls-top">
-          <span style={{ fontSize: 13, color: "var(--text-muted)" }}>Modo:</span>
-          <button className={`mode-btn ${mode === "vn2pt" ? "active" : ""}`} onClick={() => { setMode("vn2pt"); setFlipped(false); }}>🇻🇳 → 🇧🇷</button>
-          <button className={`mode-btn ${mode === "pt2vn" ? "active" : ""}`} onClick={() => { setMode("pt2vn"); setFlipped(false); }}>🇧🇷 → 🇻🇳</button>
-          <span style={{ fontSize: 13, color: "var(--text-muted)", marginLeft: 8 }}>Categoria:</span>
-          <select className="cat-select" value={catFilter} onChange={(e) => setCatFilter(e.target.value)}>
-            <option>Todos</option>
-            {categorias.map((c) => <option key={c}>{c}</option>)}
-          </select>
-          <label className="filter-toggle">
-            <input type="checkbox" checked={onlyUnknown} onChange={(e) => setOnlyUnknown(e.target.checked)} />
-            Só o que não sei
-          </label>
+        <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 18 }}>
+          <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+            <span style={{ fontSize: 12, color: "var(--text-muted)", fontWeight: 600 }}>Modo:</span>
+            <button className={`mode-btn ${mode === "vn2pt" ? "active" : ""}`} onClick={() => { setMode("vn2pt"); setFlipped(false); }}>🇻🇳 → 🇧🇷</button>
+            <button className={`mode-btn ${mode === "pt2vn" ? "active" : ""}`} onClick={() => { setMode("pt2vn"); setFlipped(false); }}>🇧🇷 → 🇻🇳</button>
+          </div>
+          <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+            <span style={{ fontSize: 12, color: "var(--text-muted)", fontWeight: 600 }}>Categoria:</span>
+            <select className="cat-select" value={catFilter} onChange={(e) => setCatFilter(e.target.value)}>
+              <option>Todos</option>
+              {categorias.map((c) => <option key={c}>{c}</option>)}
+            </select>
+            <label className="filter-toggle">
+              <input type="checkbox" checked={onlyUnknown} onChange={(e) => setOnlyUnknown(e.target.checked)} />
+              Só o que não sei
+            </label>
+          </div>
         </div>
 
         {/* Progress */}
