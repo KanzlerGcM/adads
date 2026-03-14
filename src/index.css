@@ -76,7 +76,8 @@ body {
 .nav-btn:hover { background: var(--sidebar-hover); color: #cbd5e1; }
 .nav-btn.active { background: var(--sidebar-active); color: var(--sidebar-text-active); border-left-color: var(--sidebar-border); }
 
-.content { flex: 1; margin-left: 220px; padding: 36px 40px; max-width: 1080px; }
+.content { flex: 1; margin-left: 220px; padding: 36px 40px; display: flex; justify-content: center; }
+.content-inner { width: 100%; max-width: 860px; }
 
 .page-title    { font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
 .page-subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }

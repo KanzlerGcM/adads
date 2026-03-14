@@ -43,12 +43,14 @@ export default function App() {
       </aside>
 
       <main className="content">
-        {tab === "vocab" && <Vocabulario />}
-        {tab === "flash" && <Flashcards />}
-        {tab === "gram"  && <Gramatica />}
-        {tab === "tons"  && <Tons />}
-        {tab === "nums"  && <Numeros />}
-        {tab === "conv"  && <Conversacao />}
+        <div className="content-inner">
+          {tab === "vocab" && <Vocabulario />}
+          {tab === "flash" && <Flashcards />}
+          {tab === "gram"  && <Gramatica />}
+          {tab === "tons"  && <Tons />}
+          {tab === "nums"  && <Numeros />}
+          {tab === "conv"  && <Conversacao />}
+        </div>
       </main>
     </div>
   );
