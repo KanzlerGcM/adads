@@ -430,9 +430,9 @@ body {
   bottom: 100px;
   right: 28px;
   z-index: 999;
-  width: 370px;
+  width: 500px;
   max-width: calc(100vw - 40px);
-  max-height: 560px;
+  max-height: 72vh;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 16px 48px rgba(0,0,0,0.18);
@@ -502,11 +502,11 @@ body {
 .chat-msg-user { flex-direction: row-reverse; }
 .chat-msg-avatar { font-size: 18px; flex-shrink: 0; margin-bottom: 2px; }
 .chat-msg-bubble {
-  max-width: 82%;
-  padding: 9px 13px;
+  max-width: 85%;
+  padding: 10px 15px;
   border-radius: 16px;
-  font-size: 0.87rem;
-  line-height: 1.55;
+  font-size: 0.93rem;
+  line-height: 1.65;
   white-space: pre-wrap;
   word-break: break-word;
 }
