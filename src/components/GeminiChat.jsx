@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import { GoogleGenAI } from "@google/genai";
 import { useLang } from "../contexts/LangContext";
 
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
@@ -198,22 +197,37 @@ export default function GeminiChat() {
     setLoading(true);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: effectiveKey.trim() });
-
-      // Build conversation history for context
-      const history = newMessages.slice(0, -1).map(m => ({
-        role: m.role,
+      // Build conversation history for context (exclude welcome message)
+      const history = newMessages.slice(1, -1).map(m => ({
+        role: m.role === "model" ? "model" : "user",
         parts: [{ text: m.text }],
       }));
 
-      const chat = ai.chats.create({
-        model: "gemini-2.0-flash",
-        config: { systemInstruction: SYSTEM_INSTRUCTION },
-        history,
-      });
+      const body = {
+        system_instruction: { parts: [{ text: SYSTEM_INSTRUCTION }] },
+        contents: [
+          ...history,
+          { role: "user", parts: [{ text }] },
+        ],
+        generationConfig: { temperature: 0.7, maxOutputTokens: 1024 },
+      };
 
-      const response = await chat.sendMessage({ message: text });
-      const reply = response.text || "...";
+      const res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${encodeURIComponent(effectiveKey.trim())}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        }
+      );
+
+      if (!res.ok) {
+        const errJson = await res.json().catch(() => ({}));
+        throw new Error(errJson?.error?.message || `HTTP ${res.status}`);
+      }
+
+      const json = await res.json();
+      const reply = json?.candidates?.[0]?.content?.parts?.[0]?.text || "...";
       setMessages(prev => [...prev, { role: "model", text: reply }]);
     } catch (e) {
       setError(L.errorMsg + (e?.message ? ` (${e.message})` : ""));
