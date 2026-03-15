@@ -9,6 +9,7 @@ import Numeros     from "./components/Numeros";
 import Conversacao from "./components/Conversacao";
 import Quiz        from "./components/Quiz";
 import Ordenar     from "./components/Ordenar";
+import GeminiChat  from "./components/GeminiChat";
 import { LangProvider, useLang } from "./contexts/LangContext";
 
 const TABS_OVERVIEW  = [{ id: "inicio", label: "Início",    icon: "🏠" }];
@@ -89,6 +90,7 @@ function AppInner() {
           {tab === "ordenar"  && <Ordenar />}
         </div>
       </main>
+      <GeminiChat />
     </div>
   );
 }

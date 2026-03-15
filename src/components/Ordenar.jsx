@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { palavras, CAT_COLORS } from "../data/vocabulario";
 import { useLang } from "../contexts/LangContext";
 
@@ -94,13 +94,13 @@ const SENTENCES = [
   },
   {
     tokens: [
-      { vn: "Bố",     pt: "Meu pai", en: "My father",   cat: "Nome"    },
-      { vn: "tôi",    pt: "",        en: "",             cat: "Pronome" },
-      { vn: "là",     pt: "é",       en: "is",          cat: "Verbo"   },
-      { vn: "giáo viên", pt: "professor", en: "a teacher", cat: "Profissão" },
+      { vn: "Bố",       pt: "Meu",          en: "My",          cat: "Nome"      },
+      { vn: "tôi",     pt: "pai / de mim", en: "father (mine)", cat: "Pronome"  },
+      { vn: "là",      pt: "é",            en: "is",          cat: "Verbo"    },
+      { vn: "giáo viên", pt: "professor",  en: "a teacher",   cat: "Profissão" },
     ],
-    pt: "Meu pai é professor",
-    en: "My father is a teacher",
+    pt: "Meu pai é professor (Bố tôi = meu pai)",
+    en: "My father is a teacher (Bố tôi = my father)",
   },
   {
     tokens: [
@@ -178,10 +178,12 @@ export default function Ordenar() {
   const { lang } = useLang();
   const L = LABELS[lang] || LABELS.pt;
 
-  const [deck] = useState(() => shuffle(SENTENCES));
+  // deck and bank MUST be derived from the same shuffle so deck[0] and the
+  // initial bank refer to the exact same sentence (number of tokens must match).
+  const [deck] = useState(() => shuffle([...SENTENCES]));
   const [idx, setIdx] = useState(0);
   const [placed, setPlaced] = useState([]); // token indices in placement order
-  const [bank, setBank] = useState(() => shuffle(SENTENCES[0].tokens.map((_, i) => i)));
+  const [bank, setBank] = useState(() => shuffle(deck[0].tokens.map((_, i) => i)));
   const [checked, setChecked] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [score, setScore] = useState(0);

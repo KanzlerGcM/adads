@@ -100,26 +100,41 @@ export default function Alfabeto() {
 
       {/* Combinações de Vogais */}
       <div className="card">
-        <div className="card-title">🔷 Combinações de Vogais Frequentes</div>
+        <div className="card-title">🔷 Ditongos e Tritongos — Combinações Completas (27)</div>
         <p style={{ fontSize: 13, color: "var(--text-muted)", marginBottom: 12 }}>
-          O vietnamita tem muitos ditongos e tritongos. Estas são as combinações
-          mais comuns:
+          Todas as combinações de vogais do vietnamita. Ditongos = 2 vogais juntas;
+          tritongos = 3 vogais. As formas IA/IÊ, UA/UÔ e ƯA/ƯƠ são o mesmo som
+          em sílaba aberta (sem consoante final) ou fechada (com consoante final).
         </p>
         <T
           headers={["Combinação", "Som aproximado", "Exemplo", "Tradução"]}
           rows={[
             ["<b>AI</b>", "ai (como em 'pai')", "HAI", "dois"],
             ["<b>AO</b>", "ao (como em 'caos')", "BAO", "bolsa / embrulho"],
-            ["<b>AU</b>", "âu — vogal Â + U", "ĐAU", "doer / dor"],
+            ["<b>AU</b>", "âu — Â + U", "ĐAU", "doer / dor"],
+            ["<b>AY</b>", "ai com semivogal Y final", "TAY", "braço / mão"],
             ["<b>ÂU</b>", "âu fechado e curto", "CÂU", "frase / pescar"],
-            ["<b>ÊU</b>", "êu", "NÊU", "erguer / levantar"],
-            ["<b>IA / IÊ</b>", "iê (ditongo)", "ĐĨA", "prato / disco"],
-            ["<b>OI</b>", "oi", "XÔI", "arroz glutinoso"],
-            ["<b>ÔI</b>", "ôi fechado", "RỒI", "já (feito)"],
-            ["<b>ƠI</b>", "øi", "ƠI", "ei! / oi! (exclamação)"],
-            ["<b>UA / UÔ</b>", "uô (ditongo)", "MUA", "comprar"],
-            ["<b>ƯA / ƯƠ</b>", "ưo", "NỬA", "metade"],
-            ["<b>UI</b>", "ui", "VUI", "feliz / alegre"],
+            ["<b>ÂY</b>", "âi fechado e curto", "MÂY", "nuvem"],
+            ["<b>EA</b>", "ê-a aberto (dialeto / topônimos)", "(topônimo)", "ex: Ea H'leo (Dak Lak)"],
+            ["<b>EO</b>", "êo — E recua em direção ao O", "MÈO", "gato"],
+            ["<b>ÊU</b>", "êu — Ê fecha em direção ao U", "NÊU", "erguer / levantar"],
+            ["<b>IA / IÊ</b>", "iê — I + vogal central (ditongo)", "ĐĨA", "prato / disco"],
+            ["<b>IÊU</b>", "iêu (tritongo: I → Ê → U)", "CHIỀU", "tarde / direção"],
+            ["<b>IU</b>", "iu — I fecha rapidamente ao U", "DỊU", "suave / gentil"],
+            ["<b>OA</b>", "uá — semivogal labial + A", "HOA", "flor"],
+            ["<b>OAI</b>", "uai (tritongo: U → A → I)", "NGOÀI", "do lado de fora"],
+            ["<b>OAY</b>", "uây (tritongo)", "XOAY", "girar / rodar"],
+            ["<b>OI</b>", "oi — O aberto + I", "NÓI", "falar"],
+            ["<b>ÔI</b>", "ôi — Ô fechado + I", "RỒI", "já (feito)"],
+            ["<b>ƠI</b>", "øi — Ơ + I", "ƠI", "ei! / oi! (exclamação)"],
+            ["<b>UA / UÔ</b>", "uô — U labial + vogal central", "MUA", "comprar"],
+            ["<b>UÊ</b>", "uê — U labial + Ê", "THUÊ", "alugar"],
+            ["<b>UI</b>", "ui — U fecha ao I", "VUI", "feliz / alegre"],
+            ["<b>UÔI</b>", "uôi (tritongo: U → Ô → I)", "BUỔI", "período do dia"],
+            ["<b>UY</b>", "ui posterior via semivogal Y", "THỦY", "água (clássico)"],
+            ["<b>ƯA / ƯƠ</b>", "ưo — Ư + vogal central", "NỬA", "metade"],
+            ["<b>ƯI</b>", "ưi — Ư + I", "GỬI", "enviar"],
+            ["<b>ƯƠI</b>", "ưoi (tritongo: Ư → Ơ → I)", "MƯỜI", "dez"],
           ]}
         />
       </div>
