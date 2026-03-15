@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { palavras, categorias, CAT_COLORS } from "../data/vocabulario";
+import { useLang } from "../contexts/LangContext";
 
 const STORAGE_KEY = "vn_known";
 const loadKnown = () => JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
@@ -15,6 +16,7 @@ function shuffle(arr) {
 }
 
 export default function Flashcards() {
+  const { lang } = useLang();
   const [mode, setMode]               = useState("vn2pt");
   const [catFilter, setCatFilter]     = useState("Todos");
   const [onlyUnknown, setOnlyUnknown] = useState(false);
@@ -33,6 +35,21 @@ export default function Flashcards() {
   }, [catFilter, onlyUnknown]);
 
   useEffect(() => { buildDeck(); }, [buildDeck]);
+
+  // Keyboard shortcuts: Space=flip, ←/→=nav, J=já sei, N=não sei
+  useEffect(() => {
+    const handle = (e) => {
+      if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
+      if (e.key === " ") { e.preventDefault(); setFlipped(f => !f); }
+      else if (e.key === "ArrowRight") goNext();
+      else if (e.key === "ArrowLeft")  goPrev();
+      else if (e.key === "j" || e.key === "J") markKnown(true);
+      else if (e.key === "n" || e.key === "N") markKnown(false);
+    };
+    window.addEventListener("keydown", handle);
+    return () => window.removeEventListener("keydown", handle);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [deck, idx, flipped]);
 
   const markKnown = (isKnown) => {
     if (!deck[idx]) return;
@@ -70,16 +87,29 @@ export default function Flashcards() {
     </div>
   );
 
-  const frontWord  = mode === "vn2pt" ? card.vn : card.pt;
-  const backWord   = mode === "vn2pt" ? card.pt : card.vn;
-  const frontHint  = mode === "vn2pt" ? "🇻🇳 Vietnamita — clique para revelar" : "🇧🇷 Português — clique para revelar";
-  const backHint   = mode === "vn2pt" ? "🇧🇷 Português" : "🇻🇳 Vietnamita";
+  const frontWord  = mode === "vn2pt" ? card.vn : (lang === "en" ? card.en : card.pt);
+  const backWord   = mode === "vn2pt" ? (lang === "en" ? card.en : card.pt) : card.vn;
+  const frontHint  = mode === "vn2pt"
+    ? "🇻🇳 Vietnamese — click to reveal"
+    : (lang === "en" ? "🇬🇧 English — click to reveal" : "🇧🇷 Português — clique para revelar");
+  const backHint   = mode === "vn2pt"
+    ? (lang === "en" ? "🇬🇧 English" : "🇧🇷 Português")
+    : "🇻🇳 Vietnamese";
   const colors     = CAT_COLORS[card.categoria] || { bg: "#f1f5f9", text: "#475569" };
 
   return (
     <div>
       <h2 className="page-title">🎴 Flashcards</h2>
-      <p className="page-subtitle">Clique na carta para revelar. Marque seu progresso com os botões.</p>
+      <p className="page-subtitle">
+        {lang === "en"
+          ? "Click the card to reveal. Track your progress with the buttons."
+          : "Clique na carta para revelar. Marque seu progresso com os botões."}
+      </p>
+      <p className="keyboard-hint">
+        ⌨️ {lang === "en"
+          ? "Shortcuts: Space = flip · ← → = navigate · J = I know it · N = I don't"
+          : "Atalhos: Espaço = virar · ← → = navegar · J = Já sei · N = Não sei"}
+      </p>
 
       <div className="stats-bar">
         <div className="stat-box">

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { palavras, categorias, CAT_COLORS } from "../data/vocabulario";
+import { useLang } from "../contexts/LangContext";
 
 const STORAGE_KEY = "vn_known";
 const loadKnown = () => JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
@@ -57,6 +58,7 @@ function LegendaCategorias() {
 }
 
 export default function Vocabulario() {
+  const { lang } = useLang();
   const [search, setSearch]         = useState("");
   const [catFilter, setCatFilter]   = useState("Todos");
   const [onlyUnknown, setOnlyUnknown] = useState(false);
@@ -64,7 +66,7 @@ export default function Vocabulario() {
 
   const filtered = palavras.filter((p) => {
     const q = search.toLowerCase();
-    const matchSearch = !q || p.vn.toLowerCase().includes(q) || p.pt.toLowerCase().includes(q);
+    const matchSearch = !q || p.vn.toLowerCase().includes(q) || p.pt.toLowerCase().includes(q) || (p.en && p.en.toLowerCase().includes(q));
     const matchCat    = catFilter === "Todos" || p.categoria === catFilter;
     const matchKnown  = !onlyUnknown || !known[p.vn];
     return matchSearch && matchCat && matchKnown;
@@ -146,7 +148,8 @@ export default function Vocabulario() {
             <thead>
               <tr>
                 <th>Vietnamita</th>
-                <th>Português</th>
+                <th>🇧🇷 PT</th>
+                <th>🇬🇧 EN</th>
                 <th>Categoria</th>
                 <th>Exemplo</th>
                 <th>Status</th>
@@ -160,6 +163,7 @@ export default function Vocabulario() {
                   <tr key={p.vn} className={isKnown ? "known" : ""}>
                     <td><span className="vn-word">{p.vn}</span></td>
                     <td>{p.pt}</td>
+                    <td style={{ color: "var(--text-muted)", fontSize: "0.88em" }}>{p.en}</td>
                     <td>
                       <span className="cat-badge" style={{ background: colors.bg, color: colors.text }}>
                         {p.categoria}
