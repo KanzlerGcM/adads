@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useLang } from "../contexts/LangContext";
 
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+const API_KEY = import.meta.env.VITE_GROQ_API_KEY;
 
 const SYSTEM_INSTRUCTION = `Você é o tutor de Vietnamita do Norte integrado a um aplicativo de estudos pessoal. Conheça TUDO sobre o estudante e o material dele:
 
@@ -125,7 +125,7 @@ const LABELS = {
     clear: "Limpar",
     errorMsg: "Erro ao contatar a API. Verifique sua chave e tente novamente.",
     welcome: "Olá! Sou seu tutor de Vietnamita do Norte. Pode me perguntar sobre tons, pronúncia, gramática, vocabulário — qualquer coisa! 🇻🇳",
-    free: "Gratuito • Gemini Flash",
+    free: "Gratuito • Groq Llama 3.3",
   },
   en: {
     title: "AI Tutor — Vietnamese",
@@ -147,12 +147,12 @@ const LABELS = {
     clear: "Clear",
     errorMsg: "Error contacting the API. Check your key and try again.",
     welcome: "Hello! I'm your Northern Vietnamese tutor. Ask me anything about tones, pronunciation, grammar, vocabulary — anything! 🇻🇳",
-    free: "Free • Gemini Flash",
+    free: "Free • Groq Llama 3.3",
   },
 };
 
 function getStoredKey() {
-  return localStorage.getItem("gemini_api_key") || "";
+  return localStorage.getItem("groq_api_key") || "";
 }
 
 export default function GeminiChat() {
@@ -199,24 +199,29 @@ export default function GeminiChat() {
     try {
       // Build conversation history for context (exclude welcome message)
       const history = newMessages.slice(1, -1).map(m => ({
-        role: m.role === "model" ? "model" : "user",
-        parts: [{ text: m.text }],
+        role: m.role === "model" ? "assistant" : "user",
+        content: m.text,
       }));
 
       const body = {
-        system_instruction: { parts: [{ text: SYSTEM_INSTRUCTION }] },
-        contents: [
+        model: "llama-3.3-70b-versatile",
+        messages: [
+          { role: "system", content: SYSTEM_INSTRUCTION },
           ...history,
-          { role: "user", parts: [{ text }] },
+          { role: "user", content: text },
         ],
-        generationConfig: { temperature: 0.7, maxOutputTokens: 1024 },
+        temperature: 0.7,
+        max_tokens: 1024,
       };
 
       const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${encodeURIComponent(effectiveKey.trim())}`,
+        "https://api.groq.com/openai/v1/chat/completions",
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${effectiveKey.trim()}`,
+          },
           body: JSON.stringify(body),
         }
       );
@@ -227,7 +232,7 @@ export default function GeminiChat() {
       }
 
       const json = await res.json();
-      const reply = json?.candidates?.[0]?.content?.parts?.[0]?.text || "...";
+      const reply = json?.choices?.[0]?.message?.content || "...";
       setMessages(prev => [...prev, { role: "model", text: reply }]);
     } catch (e) {
       setError(L.errorMsg + (e?.message ? ` (${e.message})` : ""));
@@ -246,7 +251,7 @@ export default function GeminiChat() {
   function saveKey() {
     const k = keyInput.trim();
     if (!k) return;
-    localStorage.setItem("gemini_api_key", k);
+    localStorage.setItem("groq_api_key", k);
     setApiKey(k);
     setKeyInput("");
   }
@@ -293,8 +298,8 @@ export default function GeminiChat() {
               <ol className="chat-nokey-steps">
                 <li>
                   {L.noKeyStep1}{" "}
-                  <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noreferrer">
-                    aistudio.google.com
+                  <a href="https://console.groq.com/keys" target="_blank" rel="noreferrer">
+                    console.groq.com
                   </a>{" "}
                   {L.noKeyStep2}
                 </li>
@@ -302,7 +307,7 @@ export default function GeminiChat() {
                   {L.noKeyStep3} <code>.env</code> {L.noKeyStep4}
                 </li>
                 <li>
-                  {L.noKeyStep5} <code>VITE_GEMINI_API_KEY=SUA_CHAVE</code>
+                  {L.noKeyStep5} <code>VITE_GROQ_API_KEY=SUA_CHAVE</code>
                 </li>
                 <li>{L.noKeyStep6}</li>
               </ol>
