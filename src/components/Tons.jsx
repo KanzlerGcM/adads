@@ -1,7 +1,7 @@
 const TONES = [
   { num: 1, name: "Ngang",  mark: "Sem marca", ex: "ma",  desc: "Tom médio, neutro — voz normal",                color: "#6366f1" },
   { num: 2, name: "Sắc",   mark: "´ (agudo)", ex: "má",  desc: "Tom subindo — voz sobe",                       color: "#10b981" },
-  { num: 3, name: "Huyền", mark: "` (grave)", ex: "mà",  desc: "Tom caindo, suave — voz desce devagar",        color: "#3b82f6" },
+  { num: 3, name: "Huyền", mark: "` (grave)", ex: "mà",  desc: "Tom caindo, grave — voz desce devagar",        color: "#3b82f6" },
   { num: 4, name: "Hỏi",   mark: "̉ (hỏi)",  ex: "mả",  desc: "Tom que sobe e desce — voz oscila",           color: "#f59e0b" },
   { num: 5, name: "Ngã",   mark: "˜ (ngã)",  ex: "mã",  desc: "Tom ondulado, quebrado — pausa no meio",      color: "#8b5cf6" },
   { num: 6, name: "Nặng",  mark: ". (nặng)", ex: "mạ",  desc: "Tom caindo forte e curto — voz cai bruscamente", color: "#64748b" },
@@ -63,9 +63,52 @@ export default function Tons() {
             ["<b>MA</b>", "ma", "má", "mà", "mả", "mã", "mạ"],
             ["<b>BO</b>", "bo", "bó", "bò", "bỏ", "bõ", "bọ"],
             ["<b>ĐA</b>", "đa", "đá", "đà", "đả", "đã", "đạ"],
-            ["<b>TA</b>", "ta", "tá", "tà", "tả", "tã", "tạ"],
           ]}
         />
+      </div>
+
+      {/* Significados de MA */}
+      <div className="card">
+        <div className="card-title">🔍 O que significa cada "MA"?</div>
+        <p style={{ fontSize: 13, color: "var(--text-muted)", marginBottom: 12 }}>
+          A mesma sílaba <strong>MA</strong> tem 6 significados completamente diferentes conforme o tom — este é o exemplo clássico do vietnamita!
+        </p>
+        <T
+          headers={["Tom", "Escrita", "Significado", "Exemplo em frase"]}
+          rows={[
+            ["1 — Ngang (plano)",      "<b>ma</b>",  "Fantasma / Espírito",       "Con ma ở đây = Tem um fantasma aqui"],
+            ["2 — Sắc (subindo)",       "<b>má</b>",  "Bochecha",                  "Má em đỏ = A bochecha dela é vermelha"],
+            ["3 — Huyền (descendo)",    "<b>mà</b>",  "Mas / Porém (conjunção)",   "Đẹp mà đắt = Bonito, mas caro"],
+            ["4 — Hỏi (oscila)",        "<b>mả</b>",  "Túmulo / Sepultura",        "Thăm mả = Visitar o túmulo"],
+            ["5 — Ngã (ondulado)",      "<b>mã</b>",  "Código / Cavalo (arcaico)", "Mã số = Código numérico"],
+            ["6 — Nặng (forte, curto)", "<b>mạ</b>",  "Muda de arroz / Plântula",  "Mạ giống = Plântula de arroz"],
+          ]}
+        />
+        <div className="note" style={{ marginTop: 10 }}>
+          💡 "ma", "má", "mà", "mả", "mã", "mạ" — mesma base fonética, 6 palavras completamente diferentes!
+        </div>
+      </div>
+
+      {/* Significados de BO */}
+      <div className="card">
+        <div className="card-title">🔍 O que significa cada "BO"?</div>
+        <p style={{ fontSize: 13, color: "var(--text-muted)", marginBottom: 12 }}>
+          Outro exemplo: a sílaba <strong>BO</strong> com os 6 tons — cada um é uma palavra diferente.
+        </p>
+        <T
+          headers={["Tom", "Escrita", "Significado", "Exemplo em frase"]}
+          rows={[
+            ["1 — Ngang (plano)",      "<b>bo</b>",  "Manteiga (arcaico)",          "— (forma isolada rara)"],
+            ["2 — Sắc (subindo)",       "<b>bó</b>",  "Amarrar / Feixe / Molho",     "Bó rau = Molho de verdura"],
+            ["3 — Huyền (descendo)",    "<b>bò</b>",  "Vaca / Rastejar / Arrastar",  "Con bò = A vaca · Bò đi = Rastejar"],
+            ["4 — Hỏi (oscila)",        "<b>bỏ</b>",  "Largar / Abandonar / Deixar", "Bỏ đi! = Vai embora! / Deixa!"],
+            ["5 — Ngã (ondulado)",      "<b>bõ</b>",  "Valer a pena / Compensar",    "Bõ công = Valeu o esforço"],
+            ["6 — Nặng (forte, curto)", "<b>bọ</b>",  "Inseto / Bicho / Bichinho",   "Con bọ = O inseto"],
+          ]}
+        />
+        <div className="note" style={{ marginTop: 10 }}>
+          💡 "bó", "bò", "bỏ", "bõ", "bọ" — sons quase idênticos para iniciantes, significados completamente diferentes!
+        </div>
       </div>
 
       <div className="tip" style={{ marginTop: 0 }}>

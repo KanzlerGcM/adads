@@ -59,7 +59,7 @@ const PATH = [
     label: "Gramática",
     tag: "3.º passo",
     tagColor: "#7c3aed",
-    desc: "9 estruturas essenciais — LÀ, CỦA, adjetivos, perguntas, futuro, demonstrativos e o complexo sistema de pronomes por relação de idade.",
+    desc: "10 estruturas essenciais — LÀ, CỦA, adjetivos, perguntas, futuro, demonstrativos, pronomes por relação de idade e classificadores.",
   },
   {
     id: "nums",

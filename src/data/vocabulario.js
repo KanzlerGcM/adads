@@ -1,6 +1,7 @@
 ﻿export const palavras = [
   { vn: "À",           pt: "Ah! (surpresa leve)",                              en: "Ah! (mild surprise)",                        categoria: "Interjeição",   exemplo: "À, tôi muốn mời anh đến nhà tôi!" },
   { vn: "Anh",         pt: "Irmão mais velho / Você (homem mais velho)",        en: "Older brother / You (older male)",           categoria: "Pronome",       exemplo: "Anh có khỏe không?" },
+  { vn: "Anh (nước)",  pt: "Reino Unido / Inglaterra",                          en: "United Kingdom / England",                  categoria: "Nome",          exemplo: "Tôi là người Anh = Sou britânico(a)" },
   { vn: "Ăn",          pt: "Comer",                                             en: "To eat",                                     categoria: "Verbo",         exemplo: "Tôi muốn ăn phở" },
   { vn: "Bà",          pt: "Avó / Você (mulher idosa)",                         en: "Grandmother / You (elderly woman)",          categoria: "Pronome",       exemplo: "Bà có khỏe không?" },
   { vn: "Bác",         pt: "Tio/Tia (mais velhos que os pais)",                 en: "Uncle/Aunt (older than parents)",            categoria: "Pronome",       exemplo: "Cháu chào Bác!" },
@@ -81,6 +82,8 @@
   { vn: "Việt Nam",    pt: "Vietnã",                                            en: "Vietnam",                                    categoria: "Nome",          exemplo: "Tôi là người Việt Nam" },
   { vn: "Vui",         pt: "Feliz / Alegre",                                    en: "Happy / Joyful",                             categoria: "Adjetivo",      exemplo: "Bạn có vui không?" },
   { vn: "Xin chào",    pt: "Olá (forma formal)",                                en: "Hello (formal)",                             categoria: "Saudação",      exemplo: "Xin chào! Bạn có khỏe không?" },
+  // === Família (presente no PDF — Pronoun.pdf) ===
+  { vn: "Dì",          pt: "Tia (irmã mais nova da mãe)",                   en: "Aunt (mother's younger sister)",             categoria: "Pronome",       exemplo: "Cháu chào dì!" },
 ];
 
 export const categorias = [...new Set(palavras.map(p => p.categoria))].sort();

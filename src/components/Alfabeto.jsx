@@ -283,6 +283,34 @@ export default function Alfabeto() {
         />
       </div>
 
+      {/* Terminações de sílaba */}
+      <div className="card">
+        <div className="card-title">🎯 Terminações de Sílaba — Grupos Vocálicos</div>
+        <p style={{ fontSize: 13, color: "var(--text-muted)", marginBottom: 12 }}>
+          As sílabas vietnamitas seguem padrões de terminação previsíveis. Dominar estes grupos acelera drasticamente a leitura e a compreensão aural.
+        </p>
+        <div className="note">⚠️ As oclusivas finais (<b>T, C, P, CH</b>) são &quot;engolidas&quot; — a boca fecha para fazer o som mas não há explosão de ar. As nasais (<b>N, M, NG, NH</b>) prolongam suavemente.</div>
+        <T
+          headers={["Grupo", "Terminações", "Exemplo", "Tradução"]}
+          rows={[
+            ["<b>-A- aberto</b>",  "-an, -am, -at, -ac, -ap, -ang, -anh",      "B<b>an</b>, b<b>am</b>, b<b>at</b>, s<b>anh</b>",  "amigo / conserva / errar / nascer"],
+            ["<b>-Ă- curto</b>",   "-ăn, -ăm, -ăt, -ăc, -ăp, -ăng",          "B<b>ăn</b>, kh<b>ăn</b>, m<b>ăt</b>",            "vender / toalha / cara/rosto"],
+            ["<b>-Â- fechado</b>", "-ân, -âm, -ât, -âc, -âp, -âng",          "B<b>ân</b>, t<b>âm</b>, c<b>ât</b>",             "ocupado / coração / cortar"],
+            ["<b>-E- aberto</b>",  "-en, -em, -et, -ep",                       "X<b>en</b>, k<b>em</b>, đ<b>et</b>",            "intercalar / sorvete / propor"],
+            ["<b>-Ê- fechado</b>", "-ên, -êm, -êt, -êc, -êp, -ênh",           "Đ<b>ên</b>, đ<b>êm</b>, đ<b>êp</b>",            "vir / noite / bonito"],
+            ["<b>-I-/-Y-</b>",     "-in, -im, -it, -ic, -ip, -inh",            "T<b>in</b>, k<b>im</b>, th<b>ich</b>",           "notícia / agulha / gostar"],
+            ["<b>-O- aberto</b>",  "-on, -om, -ot, -oc, -op, -ong",            "C<b>om</b>, b<b>ong</b>, h<b>oc</b>",            "arroz cozido / flor / estudar"],
+            ["<b>-Ô- fechado</b>", "-ôn, -ôm, -ôt, -ôc, -ôp, -ông",           "C<b>ôn</b>, t<b>ôm</b>, m<b>ôt</b>",            "poste / camarão / um"],
+            ["<b>-Ơ- médio</b>",   "-ơn, -ơm, -ơt, -ơp, -ơng",               "C<b>ơm</b>, s<b>ơn</b>, h<b>ơn</b>",            "comida / esmalte / mais"],
+            ["<b>-U-</b>",         "-un, -um, -ut, -uc, -up, -ung",            "C<b>un</b>, t<b>ung</b>, b<b>ut</b>",            "gordo / arremessar / caneta"],
+            ["<b>-Ư- posterior</b>","-ưn, -ưng, -ưt, -ưc, -ưp",              "C<b>ưng</b>, m<b>ưc</b>, t<b>ưng</b>",          "mimar / tinta / cada"],
+          ]}
+        />
+        <div className="tip" style={{ marginTop: 10 }}>
+          💡 <b>Dica prática:</b> Para treinar, leia os grupos de fora para dentro: começe com -N (mais fácil) e progrida até -T/-C/-P (oclusivas engolidas). Assim o ouvido se ajusta gradualmente.
+        </div>
+      </div>
+
       {/* Prática de leitura */}
       <div className="card">
         <div className="card-title">📝 Prática de Leitura em Voz Alta</div>
