@@ -40,6 +40,7 @@
   { vn: "Không",       pt: "Não / Partícula de pergunta sim/não",               en: "No / Not / Question particle",               categoria: "Advérbio",      exemplo: "Không, tôi không bận" },
   { vn: "Là",          pt: "Ser / Estar (forma única — nunca muda)",            en: "To be (single form — never changes)",        categoria: "Verbo",         exemplo: "Tôi là giáo viên" },
   { vn: "Lăm",         pt: "Cinco (5) — em compostos após dezenas",            en: "Five (5) — in compound numbers after tens",  categoria: "Número",        exemplo: "Hai mươi lăm = 25" },
+  { vn: "Lắm",         pt: "Muito / Bastante (intensificador após adjetivo)",   en: "Very much / A lot (after adjective)",         categoria: "Advérbio",      exemplo: "Ngon lắm! = Muito gostoso! · Đẹp lắm! = Lindo demais!" },
   { vn: "Mẹ",          pt: "Mãe",                                               en: "Mother",                                     categoria: "Nome",          exemplo: "Mẹ tôi rất đẹp" },
   { vn: "Mời",         pt: "Convidar / Por favor (polidez)",                    en: "To invite / Please (polite)",                categoria: "Verbo",         exemplo: "Mời anh ngồi!" },
   { vn: "Mới",         pt: "Novo(a)",                                           en: "New",                                        categoria: "Adjetivo",      exemplo: "Nhà mới / Điện thoại mới" },
@@ -63,6 +64,7 @@
   { vn: "Phòng khách", pt: "Sala de estar",                                     en: "Living room",                                categoria: "Substantivo",   exemplo: "Phòng khách rất đẹp" },
   { vn: "Phòng ngủ",   pt: "Quarto",                                            en: "Bedroom",                                    categoria: "Substantivo",   exemplo: "Đây là phòng ngủ" },
   { vn: "Phở",         pt: "Phở (prato típico vietnamita)",                     en: "Phở (Vietnamese noodle soup)",               categoria: "Substantivo",   exemplo: "Phở rất ngon" },
+  { vn: "Quá",          pt: "Demais! / Que...! (exclamação após adjetivo)",       en: "So much! / How...! (exclamation after adj.)", categoria: "Advérbio",      exemplo: "Đẹp quá! = Lindo demais! · Bức tranh đẹp quá! = Que quadro lindo!" },
   { vn: "Rất",         pt: "Muito",                                             en: "Very / Really",                              categoria: "Advérbio",      exemplo: "Tôi rất khoẻ" },
   { vn: "Rộng",        pt: "Espaçoso / Grande",                                 en: "Spacious / Wide",                            categoria: "Adjetivo",      exemplo: "Nhà của anh rất rộng" },
   { vn: "Sách",        pt: "Livro",                                             en: "Book",                                       categoria: "Substantivo",   exemplo: "Sách của tôi" },
@@ -78,12 +80,28 @@
   { vn: "Tuyệt",       pt: "Ótimo / Fantástico",                                en: "Great / Fantastic",                          categoria: "Adjetivo",      exemplo: "Rất tuyệt!" },
   { vn: "Tư",          pt: "Quatro (4) — alternativa em compostos",            en: "Four (4) — alternative in compound numbers", categoria: "Número",        exemplo: "Hai mươi tư = 24" },
   { vn: "Tỷ",          pt: "Bilhão (1.000.000.000)",                            en: "Billion (1,000,000,000)",                    categoria: "Número",        exemplo: "Một tỷ" },
+  { vn: "Và",          pt: "E (conecta adjetivos ou substantivos)",             en: "And (connects adjectives or nouns)",          categoria: "Conjunção",     exemplo: "Rất đẹp và rộng = Muito bonito e espaçoso" },
   { vn: "Vâng",        pt: "Sim (forma formal e respeitosa)",                   en: "Yes (formal and respectful)",                categoria: "Confirmação",   exemplo: "Vâng! Tôi hiểu rồi" },
   { vn: "Việt Nam",    pt: "Vietnã",                                            en: "Vietnam",                                    categoria: "Nome",          exemplo: "Tôi là người Việt Nam" },
   { vn: "Vui",         pt: "Feliz / Alegre",                                    en: "Happy / Joyful",                             categoria: "Adjetivo",      exemplo: "Bạn có vui không?" },
   { vn: "Xin chào",    pt: "Olá (forma formal)",                                en: "Hello (formal)",                             categoria: "Saudação",      exemplo: "Xin chào! Bạn có khỏe không?" },
   // === Família (presente no PDF — Pronoun.pdf) ===
   { vn: "Dì",          pt: "Tia (irmã mais nova da mãe)",                   en: "Aunt (mother's younger sister)",             categoria: "Pronome",       exemplo: "Cháu chào dì!" },
+
+  // === Homework: Nhà của anh rất đẹp (18/03/2026) ===
+  { vn: "Bộ phim",     pt: "Filme",                                          en: "Movie / Film",                               categoria: "Substantivo",   exemplo: "Bộ phim này rất tuyệt = Este filme é ótimo" },
+  { vn: "Bút",         pt: "Caneta / Lápis",                                 en: "Pen / Pencil",                               categoria: "Substantivo",   exemplo: "Cái bút của tôi = minha caneta" },
+  { vn: "Cái",         pt: "Classificador (objetos inanimados)",             en: "Classifier (inanimate objects)",             categoria: "Classificador", exemplo: "Cái bút · Cái ghế · Cái bàn" },
+  { vn: "Con",         pt: "Classificador (animais)",                        en: "Classifier (animals)",                       categoria: "Classificador", exemplo: "Con mèo · Con chó · Con bò" },
+  { vn: "Ghế",         pt: "Cadeira",                                        en: "Chair",                                      categoria: "Substantivo",   exemplo: "Cái ghế này rất đẹp = Esta cadeira é muito bonita" },
+  { vn: "Hay",         pt: "Bom / Interessante (livros e filmes)",           en: "Good / Interesting (books & films)",         categoria: "Adjetivo",      exemplo: "Sách này rất hay = Este livro é muito bom" },
+  { vn: "Linh",        pt: "Zero intermediário (em números compostos)",      en: "Zero filler in compound numbers",            categoria: "Número",        exemplo: "Bảy trăm linh tám = 708" },
+  { vn: "Mèo",         pt: "Gato",                                           en: "Cat",                                        categoria: "Substantivo",   exemplo: "Con mèo kia = aquele gato" },
+  { vn: "Món ăn",      pt: "Prato / Comida",                                 en: "Dish / Food",                                categoria: "Substantivo",   exemplo: "Món ăn này rất ngon = Este prato é muito gostoso" },
+  { vn: "Ngôi",        pt: "Classificador (casas e edifícios)",              en: "Classifier (houses / buildings)",            categoria: "Classificador", exemplo: "Ngôi nhà kia = aquela casa" },
+  { vn: "Quả",         pt: "Classificador (frutas)",                         en: "Classifier (fruits)",                        categoria: "Classificador", exemplo: "Quả táo · Quả cam · Quả chuối" },
+  { vn: "Quyển",       pt: "Classificador (livros)",                         en: "Classifier (books)",                         categoria: "Classificador", exemplo: "Một quyển sách = um livro" },
+  { vn: "Táo",         pt: "Maçã",                                           en: "Apple",                                      categoria: "Substantivo",   exemplo: "Quả táo này = esta maçã" },
 ];
 
 export const categorias = [...new Set(palavras.map(p => p.categoria))].sort();
@@ -105,4 +123,5 @@ export const CAT_COLORS = {
   'Conjunção':     { bg: '#f5f3ff', text: '#4338ca' },
   'Profissão':     { bg: '#ecfdf5', text: '#065f46' },
   'Confirmação':   { bg: '#f0fdf4', text: '#15803d' },
+  'Classificador': { bg: '#fef3c7', text: '#92400e' },
 };

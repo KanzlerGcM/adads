@@ -9,7 +9,9 @@ import Numeros     from "./components/Numeros";
 import Conversacao from "./components/Conversacao";
 import Quiz        from "./components/Quiz";
 import Ordenar     from "./components/Ordenar";
-import GeminiChat  from "./components/GeminiChat";
+import GeminiChat    from "./components/GeminiChat";
+import Homework      from "./components/Homework";
+import HomeworkList  from "./components/HomeworkList";
 import { LangProvider, useLang } from "./contexts/LangContext";
 
 const TABS_OVERVIEW  = [{ id: "inicio", label: "Início",    icon: "🏠" }];
@@ -26,9 +28,13 @@ const TABS_PRACTICE = [
   { id: "quiz",    label: "Quiz",         icon: "🎯" },
   { id: "ordenar", label: "Montar Frase", icon: "🧩" },
 ];
+const TABS_HOMEWORK = [
+  { id: "homework", label: "Tarefa",  icon: "📝" },
+];
 
 function AppInner() {
   const [tab, setTab] = useState("inicio");
+  const [openHwId, setOpenHwId] = useState(null);
   const { lang, setLang } = useLang();
 
   return (
@@ -63,6 +69,13 @@ function AppInner() {
               <span>{t.label}</span>
             </button>
           ))}
+          <div className="sidebar-section-label">{lang === "en" ? "Homework" : "Tarefas"}</div>
+          {TABS_HOMEWORK.map((t) => (
+            <button key={t.id} className={`nav-btn ${tab === t.id ? "active" : ""}`} onClick={() => { setTab(t.id); setOpenHwId(null); }}>
+              <span className="nav-icon">{t.icon}</span>
+              <span>{t.label}</span>
+            </button>
+          ))}
         </nav>
         <div className="sidebar-footer">
           <button
@@ -88,6 +101,8 @@ function AppInner() {
           {tab === "flash"    && <Flashcards />}
           {tab === "quiz"     && <Quiz />}
           {tab === "ordenar"  && <Ordenar />}
+          {tab === "homework" && !openHwId && <HomeworkList onOpen={(id) => setOpenHwId(id)} />}
+          {tab === "homework" && openHwId  && <Homework hwId={openHwId} onBack={() => setOpenHwId(null)} />}
         </div>
       </main>
       <GeminiChat />

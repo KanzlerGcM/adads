@@ -73,8 +73,18 @@ export default function Gramatica() {
             ["", "Đây <b>không phải là</b> phòng khách", "Aqui não é a sala de estar"],
           ]}
         />
-        <div className="tip" style={{ marginTop: 10 }}>
-          📌 <b>KHÔNG PHẢI LÀ</b> = negação de LÀ. Diferente de outras negações, usa-se <b>không phải là</b> (não apenas <b>không là</b>) — o <b>phải</b> é obrigatório!
+        <div className="note" style={{ marginTop: 10 }}>
+          ⚠️ <b>Por que PHẢI é obrigatório?</b><br/>
+          Em vietnamita, LÀ <i>não se nega diretamente</i>. <b>PHẢI</b> funciona como um marcador de identidade — significa "ser exatamente / ser de fato".<br/>
+          Pense assim: <b>Tôi là giáo viên</b> = "Eu <i>sou</i> professor" (afirma identidade com LÀ).<br/>
+          Para negar, você NÃO diz "Tôi <b>không là</b>" — isso soa como vietnamita quebrado para um nativo.<br/>
+          O que você faz: <b>PHẢI</b> marca a identidade ("é de fato"), então <b>KHÔNG PHẢI</b> nega esse marcador inteiro → "não é de fato".<br/>
+          Resultado: <b>Tôi không phải là giáo viên</b> = "Eu <i>não sou</i> professor."
+        </div>
+        <div className="tip" style={{ marginTop: 8 }}>
+          📌 Resumo prático — quando usar KHÔNG e quando usar KHÔNG PHẢI LÀ:<br/>
+          Tôi <b>không</b> bận. → nega verbo/adjetivo → "Não estou ocupado."<br/>
+          Tôi <b>không phải là</b> giáo viên. → nega identidade (LÀ) → "Não sou professor."
         </div>
       </RuleCard>
 
@@ -105,11 +115,11 @@ export default function Gramatica() {
             ["Afirmação simples", "Sujeito + adj", "Nhà đẹp", "Casa bonita"],
             ["Negação", "Sujeito + <b>không</b> + adj", "Nhà <b>không</b> đẹp", "A casa não é bonita"],
             ["Exclamação (QUÁ)", "adj + <b>quá!</b>", "Đẹp <b>quá!</b>", "Lindo demais! / Que bonito!"],
-            ["Reação (LẬM)", "adj + <b>lắm!</b>", "Ngon <b>lắm!</b>", "Muito gostoso! / Delicioso demais!"],
+            ["Reação (LẮM)", "adj + <b>lắm!</b>", "Ngon <b>lắm!</b>", "Muito gostoso! / Delicioso demais!"],
           ]}
         />
         <div className="note" style={{ marginTop: 10 }}>
-          💡 <b>QUÁ</b> e <b>LẬM</b> vêm sempre no <b>FINAL</b> do adjetivo/frase. QUÁ é mais exclamativo e de admiração (“demais!”); LẬM é mais afirmativo e intenso (“muito / bastante”). Ambos vat do Diálogo 2: “Bức tranh của anh đẹp <b>quá</b>!” = “Seu quadro é lindo demais!”
+          💡 <b>QUÁ</b> e <b>LẮM</b> vêm sempre no <b>FINAL</b> do adjetivo/frase. QUÁ é mais exclamativo e de admiração ("demais!"); LẮM é mais afirmativo e intenso ("muito / bastante"). Ambos estão no Diálogo 2: "Bức tranh của anh đẹp <b>quá</b>!" = "Seu quadro é lindo demais!"
         </div>
       </RuleCard>
 
@@ -137,13 +147,17 @@ export default function Gramatica() {
         note="⚠️ Não existe conjugação verbal em vietnamita! Basta adicionar SẼ antes do verbo."
       >
         <T
-          headers={["Estrutura", "Exemplo", "Tradução"]}
+          headers={["Marcador", "Tempo", "Estrutura", "Exemplo", "Tradução"]}
           rows={[
-            ["Sujeito + <b>sẽ</b> + verbo", "Tôi <b>sẽ</b> đến", "Eu vou / Eu irei"],
-            ["", "Tôi <b>sẽ</b> mua", "Eu vou comprar"],
-            ["", "Anh <b>sẽ</b> ăn phở", "Ele vai comer phở"],
+            ["<b>sẽ</b>", "Futuro", "Sujeito + <b>sẽ</b> + verbo", "Tôi <b>sẽ</b> đến", "Eu vou / Eu irei"],
+            ["", "", "", "Tôi <b>sẽ</b> mua", "Eu vou comprar"],
+            ["<b>đã</b>", "Passado", "Sujeito + <b>đã</b> + verbo", "Tôi <b>đã</b> mua", "Eu comprei (já comprei)"],
+            ["", "", "", "Anh <b>đã</b> đến", "Ele veio / já chegou"],
           ]}
         />
+        <div className="tip" style={{ marginTop: 10 }}>
+          📌 O verbo <b>nunca muda</b> — o mesmo "mua" (comprar) serve para todos os tempos. SẼ e ĐÃ são marcadores independentes colocados <b>antes</b> do verbo. Sem marcador = presente ou o contexto determina o tempo.
+        </div>
       </RuleCard>
 
       <RuleCard
@@ -171,8 +185,13 @@ export default function Gramatica() {
           rows={[
             ["... + <b>gì?</b>", "Bạn tên là <b>gì?</b>", "Qual é o seu nome?"],
             ["", "Đây là cái <b>gì?</b>", "O que é isso?"],
+            ["", "Bạn muốn ăn <b>gì?</b>", "O que você quer comer?"],
+            ["", "Bạn làm nghề <b>gì?</b>", "Qual é a sua profissão?"],
           ]}
         />
+        <div className="note" style={{ marginTop: 10 }}>
+          ⚠️ <b>GÌ vai SEMPRE ao final</b> — nunca no início como em português. "O que você quer?" → "Bạn muốn <b>gì?</b>" (lit. "Você quer o quê?"). O erro clássico: <b>Gì bạn muốn?</b> ❌
+        </div>
       </RuleCard>
 
       <RuleCard
@@ -182,8 +201,14 @@ export default function Gramatica() {
           headers={["Estrutura", "Exemplo", "Tradução"]}
           rows={[
             ["... + <b>nào?</b>", "Bạn là người nước <b>nào?</b>", "De qual país você é?"],
+            ["", "Phòng <b>nào?</b>", "Qual quarto / cômodo?"],
+            ["", "Bạn muốn cái <b>nào?</b>", "Qual você quer?"],
           ]}
         />
+        <div className="note" style={{ marginTop: 10 }}>
+          ⚠️ <b>NÀO vai SEMPRE ao final</b> — igual ao GÌ. "Qual país?" → "Nước <b>nào?</b>" O erro típico: <b>Nào nước?</b> ❌<br/>
+          📌 Diferença: <b>GÌ</b> pergunta "o quê?" (coisa desconhecida) · <b>NÀO</b> pergunta "qual?" (escolha entre opções conhecidas).
+        </div>
       </RuleCard>
 
       <RuleCard title="9. Sistema de Pronomes por Relação de Idade">
@@ -245,6 +270,42 @@ export default function Gramatica() {
           💡 <b>bức tranh</b> aparece como palavra única no vocabulário, mas entender que <b>bức</b> é o classificador explica por que a palavra é formada assim — e por que outros quadros/fotos também levam <b>bức</b>.
         </div>
       </RuleCard>
+      <RuleCard title="🔗 Conectores Essenciais — CÒN, VÀ e MÀ">
+        <p style={{ fontSize: 13, color: "var(--text-muted)", marginBottom: 12 }}>
+          Estas três palavras aparecem diretamente nos diálogos e exemplos do guia. Entendê-las conecta as frases de forma natural.
+        </p>
+        <T
+          headers={["Palavra", "Significado", "Uso", "Exemplo", "Tradução"]}
+          rows={[
+            ["<b>Còn</b>", "E você? / E (continuação)", "Retomar e perguntar ao interlocutor", "Tôi khỏe, <b>còn</b> anh?", "Estou bem, e você?"],
+            ["<b>Và</b>", "E (une dois elementos)", "Conectar adjetivos ou substantivos", "Rất đẹp <b>và</b> rộng", "Muito bonito e espaçoso"],
+            ["<b>Mà</b>", "Mas / Porém (casual)", "Contraste leve — fala cotidiana", "Đẹp <b>mà</b> đắt", "Bonito mas caro"],
+          ]}
+        />
+        <div className="note" style={{ marginTop: 10 }}>
+          ⚠️ <b>VÀ</b> aparece no Diálogo 2: "Nhà này của anh rất đẹp <b>và</b> rộng" = "Esta sua casa é muito bonita <b>e</b> espaçosa."<br/>
+          ⚠️ <b>MÀ</b> = Tom 3 de \"ma\" na tabela de tons — cuidado com a marca diacrítica `!
+        </div>
+      </RuleCard>
+
+      <RuleCard title="🗣️ Juntando Tudo — Apresentação Pessoal Completa">
+        <p style={{ fontSize: 13, color: "var(--text-muted)", marginBottom: 12 }}>
+          O PDF ensina uma sequência de 5 passos para se apresentar em vietnamita. Cada passo usa uma regra já aprendida:
+        </p>
+        <T
+          headers={["Passo", "Vietnamita", "Regra usada", "Português"]}
+          rows={[
+            ["1 — Cumprimentar", "<b>Xin chào!</b>", "Expressão fixa", "Olá!"],
+            ["2 — Apresentar nome", "Tôi <b>là</b> João.", "Regra 1 — LÀ", "Eu sou João."],
+            ["3 — Origem / nacionalidade", "Tôi <b>là người</b> Brasil.", "Regra 1 + người + país", "Eu sou brasileiro(a)."],
+            ["4 — Cidade ou país", "Tôi <b>đến từ</b> Brasil.", "Verbo ĐẾN TỪ", "Eu venho do Brasil."],
+            ["5 — Agradecer", "<b>Cảm ơn!</b>", "Expressão fixa", "Obrigado(a)!"],
+          ]}
+        />
+        <div className="tip" style={{ marginTop: 10 }}>
+          📌 Para <b>PERGUNTAR</b> ao outro: <b>"Bạn tên là gì?"</b> (Regra 7 — GÌ) · <b>"Bạn là người nước nào?"</b> (Regra 8 — NÀO) · <b>"Bạn có khoẻ không?"</b> (Regra 4 — CÓ...KHÔNG)
+        </div>
+      </RuleCard>
       <RuleCard title="💡 Dicas Gerais de Estudo">
         <T
           headers={["Dica", "Por quê é importante"]}
@@ -253,7 +314,7 @@ export default function Gramatica() {
             ["Memorize os <b>pronomes por relação</b> cedo", "Usar o pronome errado é considerado desrespeitoso culturalmente"],
             ["<b>C/K</b>, <b>G/GH</b>, <b>NG/NGH</b> dependem da vogal seguinte", "Regra fundamental de escrita — determina qual letra usar"],
             ["<b>CỦA</b> pode ser omitido quando a posse é clara", "Torna a fala mais natural: 'Nhà tôi' em vez de 'Nhà của tôi'"],
-            ["<b>SẾ + verbo</b> = futuro, sem exceções", "Não há conjugação verbal — basta adicionar SẾ antes do verbo"],
+            ["<b>SẼ + verbo</b> = futuro, sem exceções", "Não há conjugação verbal — basta adicionar SẼ antes do verbo"],
             ["<b>Có...không?</b> serve para qualquer pergunta sim/não", "Estrutura universal — funciona com verbos E adjetivos"],
           ]}
         />
@@ -269,6 +330,7 @@ export default function Gramatica() {
             ["5", "<b>GÌ</b> vai ao FINAL", '<span class="wrong">Gì bạn tên là?</span>', '<span class="correct">Bạn tên là gì?</span>'],
             ["6", "<b>NÀO</b> vai ao FINAL", '<span class="wrong">Nào nước bạn là người?</span>', '<span class="correct">Bạn là người nước nào?</span>'],
             ["7", "<b>NÀY / KIA</b> após substantivo", '<span class="wrong">Này sách / Kia nhà</span>', '<span class="correct">Sách này / Nhà kia</span>'],
+            ["8", "Negar LÀ → <b>KHÔNG PHẢI LÀ</b>", '<span class="wrong">Tôi không là giáo viên</span>', '<span class="correct">Tôi không phải là giáo viên</span>'],
           ]}
         />
       </RuleCard>
@@ -284,8 +346,17 @@ export default function Gramatica() {
             ["<b>MỐT</b>", "Número", "Um (1) — após dezenas", "Hai mươi mốt = 21"],
             ["<b>NĂM</b>", "Número", "Cinco (5) — forma base", "Năm người"],
             ["<b>LĂM</b>", "Número", "Cinco (5) — após dezenas", "Hai mươi lăm = 25"],
+            ["<b>QUÁ</b>", "Advérbio", "Demais! (exclamação, após adj.)", "Đẹp quá! = Lindo demais!"],
+            ["<b>LẮM</b>", "Advérbio", "Muito! (intensificador, após adj.)", "Ngon lắm! = Muito gostoso!"],
+            ["<b>VÂNG</b>", "Confirmação", "Sim (formal/respeitoso)", "Vâng! — com quem é mais velho"],
+            ["<b>CÓ</b>", "Verbo/Resposta", "Ter / Sim (neutro)", "Có nhà không? · Có! = Tem? · Tem!"],
+            ["<b>ĐÂY</b>", "Demonstrativo", "Aqui / Este (antes do verbo)", "Đây là nhà tôi"],
+            ["<b>NÀY</b>", "Demonstrativo", "Este/Esta (após substantivo)", "Nhà này = Esta casa"],
           ]}
         />
+        <div className="note" style={{ marginTop: 10 }}>
+          💡 <b>VÂNG vs CÓ:</b> ambos significam "sim", mas VÂNG é mais formal e respeitoso — use com pessoas mais velhas. CÓ é neutro e resposta direta de CÓ...KHÔNG? · <b>ĐÂY vs NÀY:</b> ambos significam "este/esta", mas ĐÂY vem <i>antes</i> do verbo ("Đây là...") e NÀY vem <i>após</i> o substantivo ("Nhà này").
+        </div>
       </RuleCard>
     </div>
   );
