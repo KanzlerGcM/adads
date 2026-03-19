@@ -192,11 +192,11 @@ export default function Flashcards() {
         </div>
       </div>
 
-      {/* Two-column layout */}
-      <div style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
+      {/* Single-column layout */}
+      <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
 
-        {/* LEFT: card */}
-        <div style={{ flex: "1 1 0", minWidth: 0 }}>
+        {/* TOP: card */}
+        <div>
           <div className="card">
             <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 18 }}>
               <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
@@ -227,7 +227,7 @@ export default function Flashcards() {
               </div>
             </div>
 
-            <div className="flip-scene" onClick={() => setFlipped((f) => !f)}>
+            <div className="flip-scene flip-scene-wide" onClick={() => setFlipped((f) => !f)}>
               <div className={`flip-card ${flipped ? "flipped" : ""}`}>
                 <div className="flip-face flip-front">
                   <div className="flip-hint">{frontHint}</div>
@@ -266,8 +266,8 @@ export default function Flashcards() {
           </div>
         </div>
 
-        {/* RIGHT: info panel */}
-        <div style={{ width: 300, flexShrink: 0 }}>
+        {/* BOTTOM: info panel (full width) */}
+        <div style={{ width: "100%" }}>
           <div style={{ display: "flex", gap: 6, marginBottom: 10 }}>
             <button
               onClick={() => setRightPanel("categoria")}

@@ -1,8 +1,21 @@
-import { useState, useCallback } from "react";
-import { palavras, CAT_COLORS } from "../data/vocabulario";
+﻿import { useState, useCallback } from "react";
+import { palavras, categorias as allCats, CAT_COLORS } from "../data/vocabulario";
 import { useLang } from "../contexts/LangContext";
 
-const QUIZ_SIZE = 10;
+const LEVELS = [
+  { size: 5,        icon: "🌱", label: "Aquecimento",     desc: "5 perguntas" },
+  { size: 10,       icon: "⭐", label: "Básico",          desc: "10 perguntas" },
+  { size: 20,       icon: "⭐⭐", label: "Intermediário", desc: "20 perguntas" },
+  { size: 30,       icon: "⭐⭐⭐", label: "Avançado",    desc: "30 perguntas" },
+  { size: 50,       icon: "🏆", label: "Expert",          desc: "50 perguntas" },
+  { size: Infinity, icon: "💪", label: "Maratona",        desc: "todas as palavras" },
+];
+
+const MODES = [
+  { id: "vn2pt", icon: "🇻🇳→🇧🇷", label: "VN → PT",  desc: "Veja vietnamita, escolha a tradução" },
+  { id: "pt2vn", icon: "🇧🇷→🇻🇳", label: "PT → VN",  desc: "Veja a tradução, escolha o vietnamita" },
+  { id: "mix",   icon: "🔀",       label: "Mix",       desc: "Mistura dos dois modos aleatoriamente" },
+];
 
 function shuffle(arr) {
   const a = [...arr];
@@ -13,115 +26,75 @@ function shuffle(arr) {
   return a;
 }
 
-function buildOptions(correct, pool, lang) {
-  const wrong = shuffle(pool.filter(w => w.vn !== correct.vn)).slice(0, 3);
+function buildOptions(correct, pool, count = 4) {
+  const wrong = shuffle(pool.filter(w => w.vn !== correct.vn)).slice(0, count - 1);
   return shuffle([correct, ...wrong]);
 }
 
-function buildQuiz(pool, lang) {
-  return shuffle(pool).slice(0, QUIZ_SIZE).map(word => ({
+function buildQuiz(pool, size, lang) {
+  const s = size === Infinity ? pool.length : Math.min(size, pool.length);
+  return shuffle(pool).slice(0, s).map(word => ({
     word,
-    options: buildOptions(word, pool, lang),
+    options: buildOptions(word, pool),
   }));
 }
 
-const LABELS = {
-  pt: {
-    title: "Quiz de Vocabulário",
-    subtitle: "Escolha a tradução correta para cada palavra vietnamita",
-    catAll: "Todas as categorias",
-    start: "Começar Quiz",
-    next: "Próxima →",
-    finish: "Ver Resultado",
-    restart: "Jogar Novamente",
-    newQuiz: "Novo Quiz",
-    score: "Pontuação",
-    correct: "Correto!",
-    wrong: "Errado!",
-    correctAnswer: "Resposta correta",
-    wordBreakdown: "Análise da Palavra",
-    meaning: "Significado",
-    category: "Categoria",
-    example: "Exemplo",
-    exampleTip: "Frase de exemplo",
-    results: "Resultado",
-    summary: "Você acertou",
-    of: "de",
-    questions: "perguntas",
-    excellent: "Excelente! Você domina este vocabulário!",
-    good: "Muito bom! Continue praticando!",
-    ok: "Bom progresso! Vale a pena revisar.",
-    low: "Não desanime, continue estudando!",
-    question: "Pergunta",
-    chooseCategory: "Escolher Categoria",
-    filterMode: "Modo de filtro",
-    modeVnToPt: "Vietnamita → Tradução",
-    modeVnToSentence: "Escolha quem usa esta palavra",
-    translation: "Tradução",
-  },
-  en: {
-    title: "Vocabulary Quiz",
-    subtitle: "Choose the correct translation for each Vietnamese word",
-    catAll: "All categories",
-    start: "Start Quiz",
-    next: "Next →",
-    finish: "See Result",
-    restart: "Play Again",
-    newQuiz: "New Quiz",
-    score: "Score",
-    correct: "Correct!",
-    wrong: "Wrong!",
-    correctAnswer: "Correct answer",
-    wordBreakdown: "Word Breakdown",
-    meaning: "Meaning",
-    category: "Category",
-    example: "Example",
-    exampleTip: "Example sentence",
-    results: "Results",
-    summary: "You got",
-    of: "out of",
-    questions: "questions",
-    excellent: "Excellent! You master this vocabulary!",
-    good: "Very good! Keep practicing!",
-    ok: "Good progress! Worth reviewing.",
-    low: "Don't give up, keep studying!",
-    question: "Question",
-    chooseCategory: "Choose Category",
-    filterMode: "Filter mode",
-    modeVnToPt: "Vietnamese → Translation",
-    modeVnToSentence: "Choose who uses this word",
-    translation: "Translation",
-  },
-};
+function WordBreakdown({ word, lang }) {
+  const colors = CAT_COLORS[word.categoria] || { bg: "#f1f5f9", text: "#334155" };
+  return (
+    <div style={{ marginTop: 10, padding: "12px 14px", background: "var(--bg)", borderRadius: 10, fontSize: 13 }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 8 }}>
+        <span style={{ background: colors.bg, color: colors.text, padding: "3px 10px", borderRadius: 999, fontWeight: 700, fontSize: 12 }}>{word.categoria}</span>
+        <span style={{ fontSize: 18, fontWeight: 800, color: "var(--primary)" }}>{word.vn}</span>
+        <span style={{ color: "var(--text-muted)", fontStyle: "italic" }}>{lang === "en" ? word.en : word.pt}</span>
+      </div>
+      {word.exemplo && (
+        <div style={{ fontSize: 12, color: "var(--text-muted)", marginBottom: 6 }}>
+          <span style={{ fontWeight: 700, color: "var(--text)" }}>Ex: </span>{word.exemplo}
+        </div>
+      )}
+      {word.gramNote && (
+        <div style={{ fontSize: 12, color: "var(--text)", lineHeight: 1.7, background: "#eff6ff", borderLeft: "3px solid var(--primary)", padding: "7px 10px", borderRadius: "0 8px 8px 0" }}>
+          💡 {word.gramNote}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Quiz() {
   const { lang } = useLang();
-  const L = LABELS[lang] || LABELS.pt;
+  const isPt = lang !== "en";
 
-  const [selectedCat, setSelectedCat] = useState("all");
-  const [quiz, setQuiz] = useState(null);
-  const [idx, setIdx] = useState(0);
-  const [chosen, setChosen] = useState(null); // index of chosen option
-  const [score, setScore] = useState(0);
-  const [done, setDone] = useState(false);
-  const [history, setHistory] = useState([]); // {word, chosen, correct, options}
+  const [selectedCat, setSelectedCat]   = useState("all");
+  const [quizSize, setQuizSize]         = useState(10);
+  const [quizMode, setQuizMode]         = useState("vn2pt");
+  const [quiz, setQuiz]                 = useState(null);
+  const [idx, setIdx]                   = useState(0);
+  const [chosen, setChosen]             = useState(null);
+  const [score, setScore]               = useState(0);
+  const [done, setDone]                 = useState(false);
+  const [history, setHistory]           = useState([]);
+  const [questionModes, setQModes]      = useState([]); // per-question mode when mix
 
-  const categorias = ["all", ...new Set(palavras.map(p => p.categoria))].sort((a, b) =>
-    a === "all" ? -1 : b === "all" ? 1 : a.localeCompare(b)
-  );
-
+  const catOptions = ["all", ...allCats];
   const pool = selectedCat === "all" ? palavras : palavras.filter(p => p.categoria === selectedCat);
 
   const startQuiz = useCallback(() => {
-    setQuiz(buildQuiz(pool, lang));
+    const q = buildQuiz(pool, quizSize, lang);
+    // For mix mode, assign random direction per question
+    const modes = q.map(() => Math.random() < 0.5 ? "vn2pt" : "pt2vn");
+    setQuiz(q);
+    setQModes(modes);
     setIdx(0);
     setChosen(null);
     setScore(0);
     setDone(false);
     setHistory([]);
-  }, [pool, lang]);
+  }, [pool, quizSize, lang, quizMode]);
 
   const current = quiz ? quiz[idx] : null;
+  const effectiveMode = quiz ? (quizMode === "mix" ? questionModes[idx] : quizMode) : "vn2pt";
 
   function handleChoose(optIdx) {
     if (chosen !== null) return;
@@ -133,98 +106,137 @@ export default function Quiz() {
       options: quiz[idx].options,
       chosen: optIdx,
       correct: quiz[idx].options.findIndex(o => o.vn === quiz[idx].word.vn),
+      mode: effectiveMode,
     }]);
   }
 
   function handleNext() {
-    if (idx + 1 >= quiz.length) {
-      setDone(true);
-    } else {
-      setIdx(i => i + 1);
-      setChosen(null);
-    }
+    if (idx + 1 >= quiz.length) setDone(true);
+    else { setIdx(i => i + 1); setChosen(null); }
   }
 
   const translation = w => lang === "en" ? w.en : w.pt;
   const catColor = cat => CAT_COLORS[cat] || { bg: "#f1f5f9", text: "#334155" };
+  const actualSize = quizSize === Infinity ? pool.length : Math.min(quizSize, pool.length);
 
-  // ── Setup screen ──────────────────────────────────────────────────────────
+  // ── Setup ──────────────────────────────────────────────────────────────────
   if (!quiz) {
     return (
       <div className="quiz-wrap">
-        <h2 className="section-title">{L.title}</h2>
-        <p className="section-sub">{L.subtitle}</p>
+        <h2 className="page-title">🎯 {isPt ? "Quiz de Vocabulário" : "Vocabulary Quiz"}</h2>
+        <p className="page-subtitle">{isPt ? "Escolha o nível, o modo e a categoria para começar" : "Choose level, mode and category to start"}</p>
 
         <div className="card quiz-setup">
-          <label className="quiz-label">{L.chooseCategory}</label>
-          <div className="cat-pills">
-            {categorias.map(cat => (
-              <button
-                key={cat}
-                className={`pill ${selectedCat === cat ? "pill-active" : ""}`}
-                onClick={() => setSelectedCat(cat)}
-              >
-                {cat === "all" ? L.catAll : cat}
-              </button>
-            ))}
+          {/* MODE */}
+          <div style={{ marginBottom: 20 }}>
+            <div className="quiz-label">{isPt ? "Modo:" : "Mode:"}</div>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              {MODES.map(m => (
+                <button key={m.id} onClick={() => setQuizMode(m.id)} style={{
+                  padding: "10px 16px", borderRadius: 10, cursor: "pointer", fontFamily: "inherit",
+                  background: quizMode === m.id ? "var(--primary)" : "var(--bg)",
+                  color: quizMode === m.id ? "#fff" : "var(--text)",
+                  border: quizMode === m.id ? "none" : "1.5px solid var(--border)",
+                  fontWeight: 700, fontSize: 13, transition: "0.15s"
+                }}>
+                  <div>{m.icon} {m.label}</div>
+                  <div style={{ fontSize: 11, fontWeight: 400, opacity: 0.85, marginTop: 2 }}>{m.desc}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* LEVEL */}
+          <div style={{ marginBottom: 20 }}>
+            <div className="quiz-label">{isPt ? "Nível / Quantidade:" : "Level / Quantity:"}</div>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              {LEVELS.map(lv => {
+                const available = lv.size === Infinity ? pool.length : Math.min(lv.size, pool.length);
+                const disabled = pool.length < 4 || (lv.size !== Infinity && pool.length < lv.size && pool.length < 4);
+                return (
+                  <button key={lv.size} onClick={() => setQuizSize(lv.size)} disabled={disabled} style={{
+                    padding: "10px 14px", borderRadius: 10, cursor: disabled ? "not-allowed" : "pointer", fontFamily: "inherit",
+                    background: quizSize === lv.size ? "#f59e0b" : "var(--bg)",
+                    color: quizSize === lv.size ? "#fff" : "var(--text)",
+                    border: quizSize === lv.size ? "none" : "1.5px solid var(--border)",
+                    fontWeight: 700, fontSize: 13, transition: "0.15s", opacity: disabled ? 0.5 : 1
+                  }}>
+                    <div>{lv.icon} {lv.label}</div>
+                    <div style={{ fontSize: 11, fontWeight: 400, opacity: 0.85, marginTop: 2 }}>{lv.size === Infinity ? `${pool.length} perguntas` : `${available} perguntas`}</div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* CATEGORY */}
+          <div style={{ marginBottom: 20 }}>
+            <div className="quiz-label">{isPt ? "Categoria:" : "Category:"}</div>
+            <div className="cat-pills">
+              {catOptions.map(cat => (
+                <button key={cat} className={`pill ${selectedCat === cat ? "pill-active" : ""}`} onClick={() => setSelectedCat(cat)}>
+                  {cat === "all" ? (isPt ? "Todas" : "All") : cat}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="quiz-pool-info">
-            {pool.length} {lang === "en" ? "words available" : "palavras disponíveis"}
-            {pool.length < 4 && (
-              <span className="quiz-warn">
-                {lang === "en" ? " (need at least 4)" : " (mínimo 4 necessário)"}
-              </span>
-            )}
+            📚 {pool.length} {isPt ? "palavras disponíveis" : "words available"} →{" "}
+            <strong>{actualSize}</strong> {isPt ? "perguntas neste quiz" : "questions in this quiz"}
+            {pool.length < 4 && <span className="quiz-warn"> ⚠️ {isPt ? "Mínimo 4 palavras necessário" : "Minimum 4 words needed"}</span>}
           </div>
 
-          <button
-            className="btn-primary quiz-start-btn"
-            onClick={startQuiz}
-            disabled={pool.length < 4}
-          >
-            {L.start}
+          <button className="btn-primary quiz-start-btn" onClick={startQuiz} disabled={pool.length < 4} style={{ marginTop: 16 }}>
+            🚀 {isPt ? "Começar Quiz" : "Start Quiz"}
           </button>
         </div>
       </div>
     );
   }
 
-  // ── Results screen ────────────────────────────────────────────────────────
+  // ── Results ────────────────────────────────────────────────────────────────
   if (done) {
     const pct = score / quiz.length;
-    const msg = pct === 1 ? L.excellent : pct >= 0.7 ? L.good : pct >= 0.5 ? L.ok : L.low;
+    const msg = pct === 1
+      ? (isPt ? "100%! Você domina este vocabulário! 🏆" : "100%! You master this vocabulary! 🏆")
+      : pct >= 0.7
+      ? (isPt ? "Muito bom! Continue praticando!" : "Very good! Keep practicing!")
+      : pct >= 0.5
+      ? (isPt ? "Bom progresso! Vale a pena revisar." : "Good progress! Worth reviewing.")
+      : (isPt ? "Não desanime, continue estudando!" : "Don't give up, keep studying!");
     return (
       <div className="quiz-wrap">
-        <h2 className="section-title">{L.results}</h2>
-
+        <h2 className="page-title">🎯 {isPt ? "Resultado" : "Results"}</h2>
         <div className="card quiz-result-card">
-          <div className="quiz-score-big">{score}/{quiz.length}</div>
+          <div className="quiz-score-big">{score} / {quiz.length}</div>
           <p className="quiz-result-msg">{msg}</p>
-          <div className="quiz-result-bar">
-            <div className="quiz-result-fill" style={{ width: `${pct * 100}%` }} />
-          </div>
+          <div className="quiz-result-bar"><div className="quiz-result-fill" style={{ width: `${pct * 100}%` }} /></div>
           <div className="quiz-result-actions">
-            <button className="btn-primary" onClick={startQuiz}>{L.restart}</button>
-            <button className="btn-outline" onClick={() => setQuiz(null)}>{L.newQuiz}</button>
+            <button className="btn-primary" onClick={startQuiz}>{isPt ? "Jogar Novamente" : "Play Again"}</button>
+            <button className="btn-outline" onClick={() => setQuiz(null)}>{isPt ? "Novo Quiz" : "New Quiz"}</button>
           </div>
         </div>
 
-        <h3 className="quiz-review-title">
-          {lang === "en" ? "Review" : "Revisão"}
-        </h3>
+        <h3 className="quiz-review-title">{isPt ? "📋 Revisão Completa" : "📋 Full Review"}</h3>
         {history.map((h, i) => {
           const isRight = h.chosen === h.correct;
+          const colors = catColor(h.word.categoria);
           return (
             <div key={i} className={`card quiz-review-item ${isRight ? "review-correct" : "review-wrong"}`}>
               <div className="quiz-review-header">
                 <span className="quiz-review-num">{i + 1}</span>
                 <span className="quiz-review-vn">{h.word.vn}</span>
-                <span className={`quiz-review-badge ${isRight ? "badge-correct" : "badge-wrong"}`}>
-                  {isRight ? "✓" : "✗"}
-                </span>
+                <span style={{ marginLeft: "auto", background: colors.bg, color: colors.text, fontSize: 11, fontWeight: 700, padding: "2px 8px", borderRadius: 999 }}>{h.word.categoria}</span>
+                <span className={`quiz-review-badge ${isRight ? "badge-correct" : "badge-wrong"}`}>{isRight ? "✓" : "✗"}</span>
               </div>
-              <WordBreakdown word={h.word} lang={lang} L={L} />
+              {!isRight && (
+                <div style={{ fontSize: 12, color: "#ef4444", marginBottom: 4 }}>
+                  {isPt ? "Você escolheu:" : "You chose:"} <strong>{translation(h.options[h.chosen])}</strong>{" "}
+                  · {isPt ? "Correto:" : "Correct:"} <strong>{translation(h.options[h.correct])}</strong>
+                </div>
+              )}
+              <WordBreakdown word={h.word} lang={lang} />
             </div>
           );
         })}
@@ -232,30 +244,30 @@ export default function Quiz() {
     );
   }
 
-  // ── Question screen ───────────────────────────────────────────────────────
+  // ── Question ───────────────────────────────────────────────────────────────
   const isAnswered = chosen !== null;
   const correctIdx = current.options.findIndex(o => o.vn === current.word.vn);
+  const questionText = effectiveMode === "vn2pt" ? current.word.vn : translation(current.word);
+  const questionHint = effectiveMode === "vn2pt"
+    ? (isPt ? "O que significa esta palavra?" : "What does this word mean?")
+    : (isPt ? "Qual é a palavra vietnamita?" : "What is the Vietnamese word?");
+  const optionText = (opt) => effectiveMode === "vn2pt" ? translation(opt) : opt.vn;
+  const colors = catColor(current.word.categoria);
 
   return (
     <div className="quiz-wrap">
       <div className="quiz-topbar">
-        <span className="quiz-progress-text">
-          {L.question} {idx + 1} / {quiz.length}
-        </span>
-        <span className="quiz-score-inline">
-          {L.score}: {score}
-        </span>
+        <span className="quiz-progress-text">{isPt ? "Pergunta" : "Question"} {idx + 1} / {quiz.length}</span>
+        <span style={{ fontSize: 12, background: colors.bg, color: colors.text, padding: "2px 8px", borderRadius: 999, fontWeight: 700 }}>{current.word.categoria}</span>
+        <span className="quiz-score-inline">{isPt ? "Acertos" : "Score"}: {score}</span>
       </div>
-
-      <div className="quiz-progress-bar">
-        <div className="quiz-progress-fill" style={{ width: `${(idx / quiz.length) * 100}%` }} />
-      </div>
+      <div className="quiz-progress-bar"><div className="quiz-progress-fill" style={{ width: `${(idx / quiz.length) * 100}%` }} /></div>
 
       <div className="card quiz-question-card">
-        <p className="quiz-question-label">
-          {lang === "en" ? "What does this mean?" : "O que significa?"}
-        </p>
-        <div className="quiz-vn-word">{current.word.vn}</div>
+        <div style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: 8, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>
+          {effectiveMode === "vn2pt" ? "🇻🇳 → 🇧🇷" : "🇧🇷 → 🇻🇳"} · {questionHint}
+        </div>
+        <div className="quiz-vn-word" style={{ fontSize: effectiveMode === "pt2vn" ? 22 : 38 }}>{questionText}</div>
 
         <div className="quiz-options">
           {current.options.map((opt, i) => {
@@ -266,68 +278,31 @@ export default function Quiz() {
               else cls += " option-dim";
             }
             return (
-              <button
-                key={i}
-                className={cls}
-                onClick={() => handleChoose(i)}
-                disabled={isAnswered}
-              >
+              <button key={i} className={cls} onClick={() => handleChoose(i)} disabled={isAnswered}>
                 <span className="option-letter">{String.fromCharCode(65 + i)}</span>
-                <span className="option-text">{translation(opt)}</span>
+                <span className="option-text">{optionText(opt)}</span>
               </button>
             );
           })}
         </div>
-      </div>
 
-      {isAnswered && (
-        <>
+        {isAnswered && (
           <div className={`quiz-feedback ${chosen === correctIdx ? "feedback-correct" : "feedback-wrong"}`}>
             <span className="feedback-icon">{chosen === correctIdx ? "✓" : "✗"}</span>
-            <span>{chosen === correctIdx ? L.correct : L.wrong}</span>
-            {chosen !== correctIdx && (
-              <span className="feedback-right">
-                {L.correctAnswer}: {translation(current.options[correctIdx])}
-              </span>
-            )}
+            <span>{chosen === correctIdx ? (isPt ? "Correto!" : "Correct!") : (isPt ? `Errado! Correto: ${optionText(current.options[correctIdx])}` : `Wrong! Correct: ${optionText(current.options[correctIdx])}`)}</span>
           </div>
+        )}
 
-          <div className="card quiz-breakdown">
-            <WordBreakdown word={current.word} lang={lang} L={L} />
-          </div>
-
-          <button className="btn-primary quiz-next-btn" onClick={handleNext}>
-            {idx + 1 >= quiz.length ? L.finish : L.next}
-          </button>
-        </>
-      )}
-    </div>
-  );
-}
-
-function WordBreakdown({ word, lang, L }) {
-  const col = CAT_COLORS[word.categoria] || { bg: "#f1f5f9", text: "#334155" };
-  return (
-    <div className="word-breakdown">
-      <div className="breakdown-row">
-        <span className="breakdown-vn">{word.vn}</span>
-        <span className="breakdown-cat" style={{ background: col.bg, color: col.text }}>
-          {word.categoria}
-        </span>
-      </div>
-      <div className="breakdown-translations">
-        <div className="breakdown-trans">
-          <span className="trans-flag">🇧🇷</span>
-          <span>{word.pt}</span>
-        </div>
-        <div className="breakdown-trans">
-          <span className="trans-flag">🇬🇧</span>
-          <span>{word.en}</span>
-        </div>
-      </div>
-      <div className="breakdown-example">
-        <span className="example-label">{L.exampleTip}:</span>
-        <span className="example-vn">{word.exemplo}</span>
+        {isAnswered && (
+          <>
+            <WordBreakdown word={current.word} lang={lang} />
+            <div style={{ textAlign: "right", marginTop: 12 }}>
+              <button className="btn-primary" onClick={handleNext}>
+                {idx + 1 >= quiz.length ? (isPt ? "Ver Resultado →" : "See Results →") : (isPt ? "Próxima →" : "Next →")}
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
