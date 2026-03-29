@@ -35,6 +35,14 @@
     gramNote: "Substantivo composto: 'bức' (classificador para quadros/pinturas) + 'tranh' (pintura). 'Bức' é o classificador específico: 'một bức tranh' (um quadro). Para elogiar: usa-se 'đẹp' (bonito), não 'hay' (que é para obras de entretenimento)." },
   { vn: "Bút",         pt: "Caneta / Lápis",                                    en: "Pen / Pencil",                               categoria: "Substantivo",   exemplo: "Cái bút của tôi",
     gramNote: "Substantivo para instrumento de escrita. Classificador: 'cái' (para objetos inanimados). 'Một cái bút' = uma caneta. Tipos: 'bút bi' (caneta esferográfica), 'bút chì' (lápis). Posse: 'cái bút của tôi' = minha caneta." },
+  { vn: "Bao nhiêu",   pt: "Quanto(s)?",                                        en: "How many? / How much?",                      categoria: "Interrogativo", exemplo: "Anh bao nhiêu tuổi?",
+    gramNote: "Interrogativo para quantidade. Estrutura para perguntar idade: Pronome + bao nhiêu + tuổi? 'Anh bao nhiêu tuổi?' = Quantos anos você tem? Resposta: Pronome + [número] + tuổi. MẤY vs BAO NHIÊU: use MẤY para crianças (números pequenos), BAO NHIÊU para adultos." },
+  { vn: "Bác sĩ",      pt: "Médico(a)",                                         en: "Doctor",                                     categoria: "Profissão",     exemplo: "Anh ấy là bác sĩ.",
+    gramNote: "Profissão: médico/médica. Com LÀ: 'Tôi là bác sĩ' (Sou médico). Profissões comuns: giáo viên (professor), sinh viên (estudante), bác sĩ (médico), kỹ sư (engenheiro). Ao cumprimentar: 'Chào bác sĩ!' — o título funciona como pronome de respeito." },
+  { vn: "Bây giờ",     pt: "Agora",                                             en: "Now",                                        categoria: "Expressão",     exemplo: "Bây giờ tôi đang học tiếng Việt.",
+    gramNote: "Expressão temporal para o MOMENTO PRESENTE. INDICADOR de ĐANG (presente contínuo). SISTEMA: HÔM QUA (ontem) → ĐÃ | BÂY GIỜ (agora) → ĐANG | NGÀY MAI (amanhã) → SẼ. Posição preferida: início da frase: 'Bây giờ tôi đang làm...' (Agora estou fazendo...)." },
+  { vn: "Bình thường", pt: "Normal / Mais ou menos",                            en: "Normal / So-so",                             categoria: "Adjetivo",      exemplo: "Tôi bình thường. Còn anh?",
+    gramNote: "Adjetivo para estado neutro — nem bom nem ruim. Resposta honesta para 'Anh có khoẻ không?'. Diferente de 'rất khoẻ' (muito bem). Use com CÒN para devolver: 'Tôi bình thường, còn anh?' (Estou normal, e você?)." },
   // =========================================================
   // C
   // =========================================================
@@ -50,8 +58,16 @@
     gramNote: "Número cardinal 9. Invariável. Compostos: 'mười chín' (19), 'hai mươi chín' (29), 'chín mươi' (90), 'chín trăm' (900). Tôi cẩn thận com o tom: 'chín' (9, tom sắc) vs 'chín' (maduro/cozido, tom sắc também — mesma escrita, mesmo tom, mas contexto diferencia)." },
   { vn: "Chị",         pt: "Irmã mais velha",                                   en: "Older sister",                               categoria: "Pronome",       exemplo: "Chị có khỏe không?",
     gramNote: "Pronome para mulher levemente mais velha (irmã mais velha, professora jovem, colega mais velha). Par feminino de 'anh'. A pessoa mais nova usa 'em' para si. 'Chị' como 'eu' quando ela fala: 'Chị tên là Linh'." },
+  { vn: "Chồng",       pt: "Marido",                                            en: "Husband",                                    categoria: "Substantivo",   exemplo: "Kia là chồng tôi.",
+    gramNote: "VỢ = esposa, CHỒNG = marido. Par conjugal fundamental. 'Kia là chồng tôi' (Aquele é meu marido). Posse: 'chồng của chị ấy' (o marido dela). No casal vietnamita, a esposa chama o marido de 'anh' e ele a chama de 'em' — sistema de pronomes por hierarquia de idade." },
+  { vn: "Chủ Nhật",    pt: "Domingo",                                           en: "Sunday",                                     categoria: "Expressão",     exemplo: "Chủ nhật tôi không đi làm.",
+    gramNote: "Único dia que NÃO segue o padrão THỨ + número. CHỦ = senhor/principal, NHẬT = dia/sol (sino-vietnamita). Sistema completo: THỨ HAI (seg) THỨ BA (ter) THỨ TƯ (qua) THỨ NĂM (qui) THỨ SÁU (sex) THỨ BẢY (sáb) CHỦ NHẬT (dom)." },
   { vn: "Chú",         pt: "Tio (irmão mais novo do pai)",                      en: "Uncle (father's younger brother)",           categoria: "Pronome",       exemplo: "Cháu chào chú!",
     gramNote: "Pronome para tio paterno mais jovem que o pai. Par masculino de 'cô'. Sistema: irmãos do PAI: 'chú' (mais novo) e 'bác' (mais velho). Irmãos da MÃE: 'cậu' (mais novo) e 'bác' (mais velho)." },
+  { vn: "Con gái",     pt: "Filha / Menina",                                    en: "Daughter / Girl",                            categoria: "Substantivo",   exemplo: "Con gái của anh mấy tuổi?",
+    gramNote: "CON GÁI = filha ou menina. CON TRAI = filho ou menino. Para perguntar idade de crianças use MẤY: 'Con gái mấy tuổi?' (não BAO NHIÊU). CON também é classificador para animais: 'một con mèo' (um gato). Sistema familiar: vợ/chồng, con trai, con gái." },
+  { vn: "Con trai",    pt: "Filho / Menino",                                    en: "Son / Boy",                                  categoria: "Substantivo",   exemplo: "Đây là con trai tôi. Cháu 12 tuổi.",
+    gramNote: "CON TRAI = filho ou menino. 'Đây là con trai tôi' (Este é meu filho). 'Cháu 12 tuổi' = ele tem 12 anos. Sistema familiar: VỢ (esposa), CHỒNG (marido), CON TRAI (filho), CON GÁI (filha)." },
   { vn: "Cô",          pt: "Tia (irmã do pai)",                                 en: "Aunt (father's sister)",                     categoria: "Pronome",       exemplo: "Cháu chào cô!",
     gramNote: "Pronome para tia paterna (irmã do pai). 'Cô giáo' = professora jovem ou de ensino fundamental (título de respeito). Sistema: 'cô/chú' para irmãos do pai / 'dì/cậu' para irmãos da mãe." },
   { vn: "Có",          pt: "Ter / Haver",                                        en: "To have / There is",                         categoria: "Verbo",         exemplo: "Anh có bận không?",
@@ -65,9 +81,15 @@
   // =========================================================
   { vn: "Dì",          pt: "Tia (irmã mais nova da mãe)",                       en: "Aunt (mother's younger sister)",             categoria: "Pronome",       exemplo: "Cháu chào dì!",
     gramNote: "Pronome para tia materna mais jovem que a mãe. Par feminino de 'cậu'. Sistema familiar completo: Irmãos da MÃE: 'cậu' (irmão mais novo) / 'dì' (irmã mais nova) / 'bác' (mais velho que a mãe). Irmãos do PAI: 'chú' / 'cô' / 'bác'." },
+  { vn: "Dạy",         pt: "Ensinar / Dar aula",                                en: "To teach",                                   categoria: "Verbo",         exemplo: "Tôi dạy ở trường đại học.",
+    gramNote: "DẠY = ensinar. DẠY HỌC = dar aula. TRƯỜNG = escola. TRƯỜNG ĐẠI HỌC = universidade. Estrutura: 'Tôi dạy tiếng Anh' (Ensino inglês). Para perguntar: 'Anh dạy ở đâu?' (Onde você ensina?). Oposto: HỌC (aprender/estudar)." },
   // =========================================================
   // Đ
   // =========================================================
+  { vn: "Đã",          pt: "Já (passado)",                                      en: "Already / Past marker",                      categoria: "Partícula",     exemplo: "Hôm qua tôi đã đi ngân hàng.",
+    gramNote: "Marcador de tempo PASSADO. Posição: ĐÃ + verbo: 'Tôi đã ăn' (Já comi). HÔM QUA (ontem) → indicador de ĐÃ. SISTEMA: ĐÃ (passado) | ĐANG (contínuo) | SẼ (futuro). O verbo nunca muda. Exemplos: đã ăn (já comi), đã học (já estudei), đã đi (já fui), đã mua (já comprei)." },
+  { vn: "Đang",        pt: "Está fazendo... (presente contínuo)",               en: "Currently / -ing form",                      categoria: "Partícula",     exemplo: "Tôi đang học tiếng Việt.",
+    gramNote: "Marcador de presente CONTÍNUO — ação acontecendo AGORA. ĐANG + verbo. BÂY GIỜ (agora) → indicador de ĐANG. SISTEMA: ĐÃ | ĐANG | SẼ. Exemplos: đang làm việc (está trabalhando), đang học (está estudando), đang ăn (está comendo). O verbo nunca muda de forma." },
   { vn: "Đâu",         pt: "Onde? (interrogativo de lugar)",                    en: "Where? (interrogative)",                     categoria: "Interrogativo", exemplo: "Nhà bạn ở đâu?",
     gramNote: "Interrogativo de lugar. Em vietnamita, palavras interrogativas vêm no FINAL da frase: 'Nhà bạn ở đâu?' (lit. 'Casa você está onde?'). Compare: 'đây' (aqui), 'đó/kia' (ali/lá), 'đâu đó' (em algum lugar). Essencial para perguntas de direção ou localização." },
   { vn: "Đây",         pt: "Aqui / Este (antes do verbo)",                      en: "Here / This (before verb)",                  categoria: "Demonstrativo", exemplo: "Đây là nhà tôi",
@@ -91,6 +113,8 @@
     gramNote: "Pronome social para a PESSOA MAIS NOVA na conversa. Usado como 'eu' ao falar com alguém mais velho: 'Em chào anh!' (Eu saúdo você, irmão mais velho!). O mais velho usa 'em' para referir à pessoa mais nova como 'você'. Não tem gênero." },
   { vn: "Giáo viên",   pt: "Professor(a)",                                      en: "Teacher",                                    categoria: "Profissão",     exemplo: "Tôi là giáo viên",
     gramNote: "Título profissional genérico para professor(a). Formas mais específicas: 'thầy giáo' (professor masculino, afetivo), 'cô giáo' (professora feminina, afetivo), 'giáo sư' (professor universitário/doutor). No sistema vietnamita, professores são tratados com grande respeito." },
+  { vn: "Gặp",         pt: "Encontrar / Conhecer (pessoalmente)",               en: "To meet / Encounter",                        categoria: "Verbo",         exemplo: "Rất vui được gặp anh!",
+    gramNote: "GẶP = encontrar ou conhecer pessoalmente. 'Rất vui được gặp [pronome]' = muito prazer em conhecer você. ĐƯỢC = ter a oportunidade de. Diferença: GẶP (encontro físico/pessoal) vs BIẾT (conhecer sobre algo). 'Hôm nay tôi gặp bạn mới' (Hoje conheci um novo amigo)." },
   { vn: "Ghế",         pt: "Cadeira",                                           en: "Chair",                                      categoria: "Substantivo",   exemplo: "Cái ghế này rất đẹp",
     gramNote: "Substantivo para cadeira (com encosto). Classificador: 'cái'. 'Một cái ghế' = uma cadeira. Compare: 'ghế' (cadeira) / 'bàn' (mesa) / 'giường' (cama). 'Mời anh ngồi ghế' = por favor, sente-se na cadeira." },
   { vn: "Gì",          pt: "O quê? (sempre ao final da frase)",                 en: "What? (always at end)",                      categoria: "Interrogativo", exemplo: "Bạn tên là gì?",
@@ -102,6 +126,14 @@
     gramNote: "Número cardinal 2. Compostos: 'mười hai' (12), 'hai mươi' (20), 'hai trăm' (200), 'hai nghìn' (2.000). Em '20' inicia a série de compostos: 'hai mươi' com 'mươi' (marca de dezena). Invariável em todos os contextos." },
   { vn: "Hay",         pt: "Bom / Interessante (livros e filmes)",              en: "Good / Interesting (books & films)",         categoria: "Adjetivo",      exemplo: "Sách này rất hay",
     gramNote: "Adjetivo com uso ESPECÍFICO: avalia qualidade de obras (livros, filmes, músicas, histórias). NÃO use para pessoas (use 'tốt') ou comida (use 'ngon'). 'Phim này hay' (este filme é bom), 'bài hát này hay' (esta música é boa). Para intensificar: 'rất hay', 'hay quá!'." },
+  { vn: "Hàn Quốc",    pt: "Coreia do Sul",                                     en: "South Korea",                                categoria: "Nome",          exemplo: "Anh ấy sẽ làm việc ở Hàn Quốc.",
+    gramNote: "Nome da Coreia do Sul (República da Coreia). Gentílico: 'người Hàn Quốc' (coreano/a). TRIỀU TIÊN = Coreia do Norte. Países asiáticos: Hàn Quốc (Coreia do Sul), Nhật Bản (Japão), Trung Quốc (China). Com 'ở' para localização: 'làm việc ở Hàn Quốc'." },
+  { vn: "Hôm kia",     pt: "Anteontem",                                         en: "Day before yesterday",                       categoria: "Expressão",     exemplo: "Hôm kia tôi đã đi Hà Nội.",
+    gramNote: "Linha do tempo de DIAS: HÔM KIA (anteontem) → HÔM QUA (ontem) → HÔM NAY (hoje) → NGÀY MAI (amanhã) → NGÀY KIA (depois de amanhã). KIA = 'lá/distante'. HÔM KIA usa ĐÃ (passado). Note: NGÀY KIA = depois de amanhã (não confundir com HÔM KIA)." },
+  { vn: "Hôm nay",     pt: "Hoje",                                              en: "Today",                                      categoria: "Expressão",     exemplo: "Hôm nay là thứ tư, ngày 1 tháng 4.",
+    gramNote: "Expressão temporal para 'hoje'. HÔM NAY pode usar qualquer marcador de tempo conforme contexto. Fórmula para datas: 'Hôm nay là [dia da semana], ngày [número] tháng [número].' Contraste: HÔM QUA (ontem), HÔM NAY (hoje), NGÀY MAI (amanhã)." },
+  { vn: "Hôm qua",     pt: "Ontem",                                             en: "Yesterday",                                  categoria: "Expressão",     exemplo: "Hôm qua tôi đã đi ngân hàng.",
+    gramNote: "Expressão temporal para 'ontem'. HÔM QUA → indicador de ĐÃ (passado). Sistema temporal: HÔM KIA (anteontem) → HÔM QUA (ontem) → HÔM NAY (hoje) → NGÀY MAI (amanhã) → NGÀY KIA (depois de amanhã). Posição preferida: início da frase para ênfase no tempo." },
   // =========================================================
   // K
   // =========================================================
@@ -113,11 +145,15 @@
     gramNote: "Demonstrativo para algo DISTANTE do falante. Vem SEMPRE APÓS o substantivo: 'ngôi nhà kia' (aquela casa), 'con mèo kia' (aquele gato). Sistema de 3 graus: 'này' (este, perto) / 'đó' (esse, médio) / 'kia' (aquele, longe). Nunca antes do substantivo." },
   { vn: "Không",       pt: "Não / Partícula de pergunta sim/não",               en: "No / Not / Question particle",               categoria: "Advérbio",      exemplo: "Không, tôi không bận",
     gramNote: "Palavra multifuncional: (1) Resposta NÃO: 'Không, tôi không bận'; (2) Negação de verbo/adj: Pronome + không + V/Adj: 'tôi không ăn' (não como), 'không đẹp' (não bonito); (3) Final de pergunta sim/não: 'Anh có bận không?' — o 'không' cria a pergunta, igual ao '吗' do mandarim." },
+  { vn: "Không có gì", pt: "De nada",                                           en: "You're welcome / It's nothing",              categoria: "Expressão",     exemplo: "Cảm ơn! — Không có gì!",
+    gramNote: "Resposta padrão para 'Cảm ơn' (obrigado). Literalmente: não tem nada (a agradecer). Alternativas: 'Không sao' (não tem problema). Sistema: KHÔNG (não) + CÓ (ter) + GÌ (coisa alguma) = de nada. Em situações formais: 'Không có gì, thưa anh/chị' (De nada, senhor/senhora)." },
   // =========================================================
   // L
   // =========================================================
   { vn: "Là",          pt: "Ser / Estar (forma única — nunca muda)",            en: "To be (single form — never changes)",        categoria: "Verbo",         exemplo: "Tôi là giáo viên",
     gramNote: "Verbo 'ser/estar' — a forma mais importante do vietnamita. NUNCA conjuga (uma única forma para eu/você/ele/nós/eles/passado/presente/futuro). IMPORTANTE: 'là' é para IDENTIDADE (profissão, nome, origem); para qualidade/estado use adjetivo DIRETO: 'Tôi bận' ✓, NÃO 'Tôi là bận' ✗." },
+  { vn: "Làm việc",    pt: "Trabalhar",                                         en: "To work",                                    categoria: "Verbo",         exemplo: "Tôi đang làm việc ở ngân hàng.",
+    gramNote: "LÀM = fazer. VIỆC = trabalho/tarefa. LÀM VIỆC = trabalhar. ĐI LÀM = ir trabalhar (destino/intenção). ĐANG LÀM VIỆC = está trabalhando agora. Para perguntar: 'Anh đang làm việc ở đâu?' (Onde você está trabalhando?). Resposta: 'Tôi đang làm việc ở [lugar]'." },
   { vn: "Lăm",         pt: "Cinco (5) — em compostos após dezenas",            en: "Five (5) — in compound numbers after tens",  categoria: "Número",        exemplo: "Hai mươi lăm = 25",
     gramNote: "Variante de 'năm' (5) usada OBRIGATORIAMENTE na posição de unidade após dezenas: '15 = mười lăm', '25 = hai mươi lăm', '35 = ba mươi lăm'. ERRO COMUM: dizer 'hai mươi năm' para 25 — o correto é 'hai mươi lăm'. 'Năm' só na posição de dezenas e centenas." },
   { vn: "Lắm",         pt: "Muito / Bastante (intensificador após adjetivo)",   en: "Very much / A lot (after adjective)",         categoria: "Advérbio",      exemplo: "Ngon lắm! = Muito gostoso! · Đẹp lắm! = Lindo demais!",
@@ -127,6 +163,10 @@
   // =========================================================
   // M
   // =========================================================
+  { vn: "Máy tính",    pt: "Computador",                                        en: "Computer",                                   categoria: "Substantivo",   exemplo: "Tôi đã mua máy tính và điện thoại.",
+    gramNote: "MÁY TÍNH = computador (lit. 'máquina de calcular': máy=máquina, tính=calcular). Classificador: 'cái'. TI VI = televisão; XEM TI VI = assistir TV. Frase-exemplo: 'Tôi đã mua máy tính và điện thoại' — ĐÃ para ação passada, VÀ para ligar dois objetos." },
+  { vn: "Mấy",         pt: "Quantos? (números pequenos / crianças)",            en: "How many? (small numbers / children's age)", categoria: "Interrogativo", exemplo: "Con gái của anh mấy tuổi?",
+    gramNote: "Interrogativo para NÚMEROS PEQUENOS (1–9) e especialmente idade de CRIANÇAS. MẤY vs BAO NHIÊU: 'Con gái mấy tuổi?' (criança) vs 'Anh bao nhiêu tuổi?' (adulto). Para dia da semana: 'Hôm nay là thứ mấy?' (Que dia da semana é hoje?)." },
   { vn: "Mẹ",          pt: "Mãe",                                               en: "Mother",                                     categoria: "Nome",          exemplo: "Mẹ tôi rất đẹp",
     gramNote: "Palavra para mãe, predominante no Norte. No Sul: 'má'. 'Mẹ tôi' = minha mãe. Pronome social: filhos usam 'con' para si e chamam a mãe de 'mẹ'. Para dizer 'minha mãe é...' não precisa de 'của': 'Mẹ tôi là... ' ✓." },
   { vn: "Mèo",         pt: "Gato",                                              en: "Cat",                                        categoria: "Substantivo",   exemplo: "Con mèo kia = aquele gato",
@@ -160,8 +200,14 @@
     gramNote: "Demonstrativo para 'este/esta' (próximo ao falante). SEMPRE após o substantivo: 'sách này' (este livro), 'nhà này' (esta casa). NUNCA 'này sách'. Contraste crítico com 'đây': 'sách này đẹp' (este livro é bonito) vs 'Đây là sách' (isso aqui é um livro — đây antes de 'là')." },
   { vn: "Năm",         pt: "Cinco (5) — forma base",                           en: "Five (5) — base form",                       categoria: "Número",        exemplo: "Năm người",
     gramNote: "Número cardinal 5 — forma padrão. Use 'năm' em: '5 = năm', '50 = năm mươi', '500 = năm trăm', '5.000 = năm nghìn'. ATENÇÃO: na posição de UNIDADE após dezenas, usa 'lăm', não 'năm': '15 = mười lăm', '25 = hai mươi lăm'. Regra de ouro: năm para dezenas+, lăm para unidades em compostos." },
+  { vn: "Năm ngoái / Năm nay / Năm sau", pt: "Ano passado / Este ano / Ano que vem", en: "Last year / This year / Next year",    categoria: "Expressão",     exemplo: "Năm nay là năm 2026.",
+    gramNote: "ATENÇÃO: 'ano passado' é NĂM NGOÁI (não 'Năm Trước' — erro comum!). Padrão TRƯỚC/NÀY/SAU: TUẦN TRƯỚC/NÀY/SAU (semana), THÁNG TRƯỚC/NÀY/SAU (mês). Mas para ANO: NĂM NGOÁI (passado), NĂM NAY (este), NĂM SAU (que vem). HAI NĂM SAU = em dois anos." },
+  { vn: "Ngày",        pt: "Dia / Data",                                        en: "Day / Date",                                 categoria: "Substantivo",   exemplo: "Hôm nay là ngày bao nhiêu?",
+    gramNote: "NGÀY = dia ou data. Para dizer datas: NGÀY + número + THÁNG + número + NĂM + número. Ordem: DIA/MÊS/ANO (igual ao Brasil!). 'Hôm nay là ngày bao nhiêu?' = Que dia é hoje? Contraste: NGÀY (dia), HÔM NAY (hoje), HÔM QUA (ontem), NGÀY MAI (amanhã)." },
   { vn: "Ngày mai",    pt: "Amanhã",                                            en: "Tomorrow",                                   categoria: "Expressão",     exemplo: "Ngày mai anh có bận không?",
     gramNote: "Expressão temporal: 'ngày' (dia) + 'mai' (amanhã/próximo). Posição na frase: geralmente no INÍCIO (ênfase no tempo) ou após o sujeito: 'Ngày mai tôi bận' (Amanhã estou ocupado). Contraste: 'hôm nay' (hoje), 'hôm qua' (ontem), 'ngày mai' (amanhã)." },
+  { vn: "Ngân hàng",   pt: "Banco",                                             en: "Bank",                                       categoria: "Substantivo",   exemplo: "Hôm qua tôi đã đi ngân hàng.",
+    gramNote: "NGÂN HÀNG = banco (instituição financeira). Frase-exemplo: 'Hôm qua, tôi đã đi ngân hàng' (Ontem, fui ao banco) — combina HÔM QUA com ĐÃ. 'Làm việc ở ngân hàng' = trabalhar no banco. Outras instituições: trường (escola), bệnh viện (hospital), siêu thị (supermercado)." },
   { vn: "Nghìn",       pt: "Mil (1.000)",                                       en: "Thousand (1,000)",                           categoria: "Número",        exemplo: "Một nghìn",
     gramNote: "Número para mil. Nota regional: Norte usa 'nghìn', Sul usa 'ngàn'. Compostos: 'mười nghìn' (10.000), 'một trăm nghìn' (100.000). Zero intermediário: '1.005 = một nghìn linh năm'. Com outros números: '2.500 = hai nghìn năm trăm'." },
   { vn: "Ngon",        pt: "Gostoso / Delicioso",                               en: "Delicious / Tasty",                          categoria: "Adjetivo",      exemplo: "Phở rất ngon",
@@ -195,6 +241,8 @@
     gramNote: "Composto: 'phòng' (quarto) + 'ngủ' (dormir). Em vietnamita, verbos podem modificar substantivos diretamente sem preposição: 'phòng + ngủ' = 'quarto + dormir' = quarto de dormir. Padrão de apresentação: 'Đây là phòng ngủ, kia là phòng khách' (Isto é o quarto, aquilo é a sala)." },
   { vn: "Phở",         pt: "Phở (prato típico vietnamita)",                     en: "Phở (Vietnamese noodle soup)",               categoria: "Substantivo",   exemplo: "Phở rất ngon",
     gramNote: "Nome do prato mais emblemático do Vietnã — sopa de macarrão (bánh phở) com caldo de carne e ervas. Originário do Norte (Hanói). Sem classificador padrão: 'một tô phở' (uma tigela de phở) ou simplesmente 'ăn phở' (comer phở). Tom hỏi (̉): 'phở' pronunciado com curva descendente-ascendente." },
+  { vn: "Phải không?", pt: "Não é? / Certo? (confirmação)",                     en: "Right? / Isn't it? (tag question)",          categoria: "Expressão",     exemplo: "Kia là bức tranh của anh phải không?",
+    gramNote: "PHẢI KHÔNG? = tag question ao FINAL da frase. Equivale a '...não é?' ou '...certo?'. 'Kia là bức tranh của anh phải không?' = Aquele é seu quadro, não é? Resposta: VÂNG/ĐÚNG (sim, correto) ou KHÔNG (não). Forma mais formal: CÓ PHẢI KHÔNG? (com CÓ no início)." },
   // =========================================================
   // Q
   // =========================================================
@@ -202,6 +250,8 @@
     gramNote: "Intensificador exclamativo que vem APÓS o adjetivo. Exprime surpresa ou admiração forte: 'đẹp quá!' (lindo demais!), 'ngon quá!' (delicioso demais!). Compare os 3 intensificadores: 'rất + adj' (muito, neutro) / 'adj + quá' (demais!, exclamativo) / 'adj + lắm' (muitíssimo, superlativo enfático)." },
   { vn: "Quả",          pt: "Classificador (frutas)",                             en: "Classifier (fruits)",                        categoria: "Classificador", exemplo: "Quả táo · Quả cam · Quả chuối",
     gramNote: "Classificador para frutas e alguns objetos arredondados. OBRIGATÓRIO ao contar: 'một quả táo' (uma maçã), 'hai quả cam' (duas laranjas), 'ba quả chuối' (três bananas), 'một quả bóng' (uma bola). Especificidade: cada tipo de substantivo tem seu classificador; trocar pode soar estranho." },
+  { vn: "Quần áo",     pt: "Roupa / Roupas",                                    en: "Clothes",                                    categoria: "Substantivo",   exemplo: "Em sẽ tặng mẹ quần áo mới.",
+    gramNote: "Substantivo composto: QUẦN (calça) + ÁO (camisa/blusa) = 'roupas' (termo genérico). Peças específicas: ÁO DÀI (vestido tradicional), QUẦN JEAN (calça jeans), ÁO SƠ MI (camisa social). 'Mua quần áo' = comprar roupas. Adjetivo após: 'quần áo mới' (roupas novas)." },
   { vn: "Quyển",        pt: "Classificador (livros)",                             en: "Classifier (books)",                         categoria: "Classificador", exemplo: "Một quyển sách = um livro",
     gramNote: "Classificador para livros e cadernos (objetos com páginas encadernadas). 'Một quyển sách' (um livro), 'hai quyển sách' (dois livros), 'quyển vở' (um caderno). Alternativa: 'cuốn' é sinônimo mais informal. NÃO use para revistas ('tờ' ou sem classificador específico)." },
   // =========================================================
@@ -211,6 +261,8 @@
     gramNote: "Advérbio intensificador. Vem ANTES do adjetivo ou verbo que modifica: 'rất đẹp' (muito bonito), 'rất bận' (muito ocupado), 'rất muốn' (querer muito). POSIÇÃO OPOSTA ao português: em VN = 'muito + adj', não 'adj + muito'. Neutro em tom (não exclamativo como 'quá')." },
   { vn: "Rộng",        pt: "Espaçoso / Grande",                                 en: "Spacious / Wide",                            categoria: "Adjetivo",      exemplo: "Nhà của anh rất rộng",
     gramNote: "Adjetivo de espaço. Refere-se à amplitude, largura ou espaço interno. Usado para casas, quartos, ruas, espaços. Sempre APÓS o substantivo: 'nhà rộng' (casa espaçosa). 'Rộng' e 'đẹp' frequentemente aparecem juntos: 'rất đẹp và rộng' (muito bonito e espaçoso)." },
+  { vn: "Rất vui được gặp", pt: "Muito prazer em conhecer",                     en: "Nice to meet you",                           categoria: "Expressão",     exemplo: "Rất vui được gặp anh!",
+    gramNote: "Expressão de apresentação: RẤT (muito) + VUI (feliz) + ĐƯỢC (ter a oportunidade) + GẶP (encontrar). Lit.: 'muito feliz de ter a oportunidade de encontrar você'. Versão simplificada: 'Vui được gặp bạn'. Resposta: 'Tôi cũng vui!' (Eu também!) ou 'Tôi cũng vậy!'." },
   // =========================================================
   // S
   // =========================================================
@@ -218,6 +270,10 @@
     gramNote: "Substantivo para livro. Classificador: 'quyển' (formal) ou 'cuốn' (informal). 'Một quyển sách' = um livro. Adjetivo para avaliar livros: 'hay' (bom/interessante), não 'ngon'. 'Sách này hay quá!' = Que livro bom! Posse: 'sách của tôi' ou 'sách tôi' (meu livro)." },
   { vn: "Sáu",         pt: "Seis (6)",                                          en: "Six (6)",                                    categoria: "Número",        exemplo: "Sáu người",
     gramNote: "Número cardinal 6. Invariável. Compostos: 'mười sáu' (16), 'hai mươi sáu' (26), 'sáu mươi' (60), 'sáu trăm' (600). Sem variantes especiais — 'sáu' é sempre 'sáu' em qualquer posição." },
+  { vn: "Sinh nhật",   pt: "Aniversário",                                       en: "Birthday",                                   categoria: "Substantivo",   exemplo: "Tuần sau là sinh nhật của mẹ em.",
+    gramNote: "SINH = nascer, NHẬT = dia (sino-vietnamita). Literalmente 'dia do nascimento'. Frase do curso: 'Tuần sau là sinh nhật của mẹ em' (Semana que vem é o aniversário da minha mãe). 'Chúc mừng sinh nhật!' = Feliz aniversário! 'Quà sinh nhật' = presente de aniversário." },
+  { vn: "Sinh viên",   pt: "Estudante universitário(a)",                        en: "University student",                         categoria: "Profissão",     exemplo: "Tôi là sinh viên.",
+    gramNote: "SINH VIÊN = estudante universitário (nível superior). Diferente de HỌC SINH = aluno de ensino fundamental/médio. 'Tôi là sinh viên' (Sou estudante universitário). Sistema de profissões: giáo viên (professor), sinh viên (estudante), bác sĩ (médico)." },
   { vn: "Sẽ",          pt: "Vai / Irá (futuro — antes do verbo)",              en: "Will (future marker — before verb)",          categoria: "Partícula",     exemplo: "Tôi sẽ đến",
     gramNote: "Marcador de tempo FUTURO. Posição: ANTES do verbo principal: 'Tôi sẽ đến' (Eu vou vir), 'Tôi sẽ mua...' (Vou comprar). O verbo NUNCA muda. Sem 'sẽ', a frase é ambígua quanto ao tempo. SISTEMA DE MARCADORES: 'đã' (passado), [nada] (presente), 'đang' (contínuo), 'sẽ' (futuro)." },
   // =========================================================
@@ -227,10 +283,18 @@
     gramNote: "Número cardinal 8. Invariável. Compostos: 'mười tám' (18), 'hai mươi tám' (28), 'tám mươi' (80), 'tám trăm' (800), 'linh tám' (zero-oito, em compostos). Sem variantes especiais." },
   { vn: "Táo",         pt: "Maçã",                                              en: "Apple",                                      categoria: "Substantivo",   exemplo: "Quả táo này = esta maçã",
     gramNote: "Substantivo para maçã. Classificador: 'quả' (para frutas). 'Một quả táo' = uma maçã. Tipos: 'táo xanh' (maçã verde — lit. verde), 'táo đỏ' (maçã vermelha). Note: 'táo' também é um nome masculino vietnamita. Frases compostas: 'nước táo' = suco de maçã." },
+  { vn: "Tặng",        pt: "Presentear / Dar de presente",                      en: "Give as a gift",                             categoria: "Verbo",         exemplo: "Em sẽ tặng mẹ quần áo mới.",
+    gramNote: "TẶNG = presentear (ato de dar). Estrutura: TẶNG + pessoa + coisa: 'Tặng mẹ quần áo' = presentear a mãe com roupa. QUÀ = presente (substantivo). TẶNG QUÀ = dar um presente. TẶNG QUÀ SINH NHẬT = dar presente de aniversário. Diferente de CHO (dar/entregar sem contexto de presente)." },
   { vn: "Tên",         pt: "Nome",                                              en: "Name",                                       categoria: "Substantivo",   exemplo: "Bạn tên là gì?",
     gramNote: "Substantivo para nome. Pergunta padrão de apresentação: 'Bạn tên là gì?' (Qual é o seu nome? — lit. 'Você nome é o quê?'). Resposta: 'Tôi tên là [nome]' ou simplesmente 'Tôi là [nome]'. 'Tên là' é combinação fixa. Compare: 'họ' (sobrenome), 'tên' (primeiro nome)." },
   { vn: "Thái Lan",    pt: "Tailândia",                                         en: "Thailand",                                   categoria: "Nome",          exemplo: "Tôi mua ở Thái Lan",
     gramNote: "Nome do país Tailândia. Gentílico: 'người Thái Lan' (tailandês/a). Precedido por 'ở' ao indicar local: 'Tôi mua ở Thái Lan' (comprei na Tailândia). A preposição 'ở' antes de nome de país indica localização/origem da ação." },
+  { vn: "Tháng",       pt: "Mês",                                               en: "Month",                                      categoria: "Substantivo",   exemplo: "Tháng này là tháng mấy?",
+    gramNote: "THÁNG + número = mês. THÁNG MỘT (jan), THÁNG HAI (fev)... THÁNG MƯỜI HAI (dez). Exceção: THÁNG TƯ = abril (usa TƯ = 4). Padrão temporal: THÁNG TRƯỚC (mês passado), THÁNG NÀY (este mês), THÁNG SAU (mês que vem). 'Tháng mấy?' = Que mês?" },
+  { vn: "Thứ Hai / Thứ Ba / Thứ Tư", pt: "Segunda / Terça / Quarta",           en: "Monday / Tuesday / Wednesday",               categoria: "Expressão",     exemplo: "Hôm nay là thứ tư, ngày 1 tháng 4.",
+    gramNote: "Dias da semana: THỨ + número (conta a partir de 2). THỨ HAI (seg=2), THỨ BA (ter=3), THỨ TƯ (qua=4). ATENÇÃO: THỨ TƯ usa TƯ (variante de 4 em compostos). Sistema mnemônico: segunda=dia 2, terça=dia 3... sábado=dia 7. DOMINGO = CHỦ NHẬT (único que não segue o padrão)." },
+  { vn: "Thứ Năm / Thứ Sáu / Thứ Bảy", pt: "Quinta / Sexta / Sábado",         en: "Thursday / Friday / Saturday",               categoria: "Expressão",     exemplo: "Thứ sáu tôi sẽ đi mua quần áo.",
+    gramNote: "THỨ NĂM (qui=5), THỨ SÁU (sex=6), THỨ BẢY (sáb=7). Sistema perfeito: THỨ + número de 2 a 7. ATENÇÃO: para 'quinta' usa NĂM (não LĂM — LĂM só em compostos após dezenas). Para perguntar o dia: 'Hôm nay là thứ mấy?' (Que dia da semana é hoje?)." },
   { vn: "Tôi",         pt: "Eu (neutro / mesma idade)",                         en: "I / Me (neutral)",                           categoria: "Pronome",       exemplo: "Tôi là giáo viên",
     gramNote: "Pronome 'eu/me' mais seguro para iniciantes — neutro, sem implicação de idade. Usado com pessoas da mesma faixa etária. Em interações com pessoas mais velhas, troque 'tôi' por 'em' (falando com irmão mais velho) ou 'cháu' (falando com avós/tios). 'Tôi' é sempre correto até você aprender os outros." },
   { vn: "Trăm",        pt: "Cem (100)",                                         en: "Hundred (100)",                              categoria: "Número",        exemplo: "Một trăm",
@@ -239,6 +303,12 @@
     gramNote: "Número para um milhão. Hierarquia numérica completa: tỷ (bilhão, 10⁹) > triệu (milhão, 10⁶) > nghìn (mil, 10³) > trăm (cem, 10²) > mươi (dez) > [unidade]. 'Hai triệu' = 2 milhões. Importante em contexto econômico (moeda: 'triệu đồng')." },
   { vn: "Trung Quốc",  pt: "China",                                             en: "China",                                      categoria: "Nome",          exemplo: "Tôi là người Trung Quốc",
     gramNote: "Nome da China (República Popular). Origem sino-vietnamita: 'Trung' (central) + 'Quốc' (nação). Gentílico: 'người Trung Quốc'. Outros países asiáticos: 'Nhật Bản' (Japão), 'Hàn Quốc' (Coreia do Sul), 'Triều Tiên' (Coreia do Norte)." },
+  { vn: "Trường đại học", pt: "Universidade",                                   en: "University",                                 categoria: "Substantivo",   exemplo: "Tôi dạy ở trường đại học.",
+    gramNote: "TRƯỜNG = escola (genérico). TRƯỜNG ĐẠI HỌC = universidade (lit. 'escola de estudo superior'). Níveis: TRƯỜNG MẦM NON (pré-escola), TRƯỜNG TIỂU HỌC (fundamental), TRƯỜNG TRUNG HỌC (médio), TRƯỜNG ĐẠI HỌC (universidade). ĐẠI HỌC QUỐC GIA = Universidade Nacional." },
+  { vn: "Tuần",        pt: "Semana",                                            en: "Week",                                       categoria: "Substantivo",   exemplo: "Tuần sau là sinh nhật của mẹ em.",
+    gramNote: "TUẦN = semana. Padrão temporal: TUẦN TRƯỚC (semana passada), TUẦN NÀY (esta semana), TUẦN SAU (semana que vem). HAI TUẦN SAU = em duas semanas. Paralelismo: THÁNG (mês), TUẦN (semana). ATENÇÃO para ANO: NĂM NGOÁI ✓, NĂM TRƯỚC ✗ (ver Năm ngoái/nay/sau)." },
+  { vn: "Tuổi",        pt: "Idade / Anos de idade",                             en: "Age / Years old",                            categoria: "Substantivo",   exemplo: "Anh bao nhiêu tuổi? — Anh 30 tuổi.",
+    gramNote: "Estrutura para idade: Pronome + [número] + TUỔI. SEM VERBO — não se diz 'Tôi LÀ 30 tuổi'. 'Anh bao nhiêu tuổi?' (adulto) vs 'Cháu mấy tuổi?' (criança). Exemplos: 'Tôi 25 tuổi' (Tenho 25 anos), 'Cháu 7 tuổi' (A criança tem 7 anos). TUỔI tem tom hỏi." },
   { vn: "Tuyệt",       pt: "Ótimo / Fantástico",                                en: "Great / Fantastic",                          categoria: "Adjetivo",      exemplo: "Rất tuyệt!",
     gramNote: "Adjetivo/interjeição para 'ótimo, fantástico, incrível'. SEMPRE em contexto positivo. Como exclamação: 'Tuyệt quá!' (Que ótimo!), 'Thật tuyệt!' (Que fantástico mesmo!). Como descrição: 'Rất tuyệt' (muito ótimo). Mais forte que 'tốt' (bom) — tuyệt expressa entusiasmo." },
   { vn: "Tư",          pt: "Quatro (4) — alternativa em compostos",            en: "Four (4) — alternative in compound numbers", categoria: "Número",        exemplo: "Hai mươi tư = 24",
@@ -252,12 +322,16 @@
     gramNote: "Conjunção 'e'. Conecta adjetivos: 'đẹp và rộng' (bonito e espaçoso). Pode conectar substantivos: 'sách và bút' (livro e caneta). Para VERBOS, o vietnamita geralmente os coloca em sequência SEM conjunção: 'Tôi ăn uống' (como e bebo — lit. 'eu como bebo'). 'Và' raro entre verbos." },
   { vn: "Vâng",        pt: "Sim (forma formal e respeitosa)",                   en: "Yes (formal and respectful)",                categoria: "Confirmação",   exemplo: "Vâng! Tôi hiểu rồi",
     gramNote: "Confirmação afirmativa FORMAL e respeitosa. Use com pessoas mais velhas, superiores hierárquicos ou em situações formais. Informal/igual: 'ừ' ou 'có'. Sistema: 'vâng' (muito respeitoso) > 'dạ/có' (respeitoso) > 'ừ' (casual, igual ou inferior em hierarquia)." },
+  { vn: "Vợ",          pt: "Esposa",                                            en: "Wife",                                       categoria: "Substantivo",   exemplo: "Kia là vợ của tôi.",
+    gramNote: "VỢ = esposa. CHỒNG = marido. Apresentação: 'Kia là vợ của tôi' (Aquela é minha esposa). Posse: 'vợ của anh ấy' (a esposa dele). No casal vietnamita, a esposa chama o marido de 'anh' e ele a chama de 'em' — pronomes baseados em hierarquia de idade real ou simbólica." },
   { vn: "Việt Nam",    pt: "Vietnã",                                            en: "Vietnam",                                    categoria: "Nome",          exemplo: "Tôi là người Việt Nam",
     gramNote: "Nome do país. Origem: 'Việt' (povo Viet) + 'Nam' (sul). Idioma: 'tiếng Việt'. Regiões: 'miền Bắc' (Norte), 'miền Trung' (Centro), 'miền Nam' (Sul). Dialetos principais diferem em pronúncia e vocabulário. Você está estudando o dialeto do Norte (Hanói)." },
   { vn: "Vui",         pt: "Feliz / Alegre",                                    en: "Happy / Joyful",                             categoria: "Adjetivo",      exemplo: "Bạn có vui không?",
     gramNote: "Adjetivo de estado emocional. Vem após o sujeito: 'Tôi rất vui' (estou muito feliz). 'Vui quá!' (Que alegria!). Expressão importante: 'Vui lòng' = por favor (lit. 'coração alegre' — pedido formal). Compare: 'hạnh phúc' (feliz/satisfeito, mais profundo que 'vui')." },
   { vn: "Xin chào",    pt: "Olá (forma formal)",                                en: "Hello (formal)",                             categoria: "Saudação",      exemplo: "Xin chào! Bạn có khỏe không?",
     gramNote: "'Xin' (gentilmente pedir/por favor) + 'chào' (saudar). Versão formal e completa de 'chào'. Pode ser usada com qualquer pessoa em qualquer situação. Em apresentações: 'Xin chào, tôi là [nome]'. 'Xin' + verbo = polidez: 'Xin lỗi' (desculpe-me — lit. 'peço perdão')." },
+  { vn: "Xin lỗi",     pt: "Desculpe / Com licença",                            en: "Sorry / Excuse me",                          categoria: "Expressão",     exemplo: "Xin lỗi, anh tên là gì?",
+    gramNote: "XIN (por favor/peço) + LỖI (erro/falta) = 'peço desculpas'. Dois usos: (1) DESCULPE — por erros: 'Xin lỗi, tôi đến muộn' (Desculpe, cheguei tarde); (2) COM LICENÇA — antes de interromper: 'Xin lỗi, anh tên là gì?' (Com licença, como é seu nome?). XIN = partícula de polidez." },
 ];
 
 export const categorias = [...new Set(palavras.map(p => p.categoria))].sort();
