@@ -115,6 +115,22 @@ const CATEGORIAS = [
     ],
   },
   {
+    id: "trab", icon: "💼", cor: "#0f766e",
+    titulo: "Trabalho & Agenda",
+    frases: [
+      { vn: "Anh/Chị đi đâu đấy?", pt: "Para onde você está indo?" },
+      { vn: "Tôi đi làm.", pt: "Vou trabalhar." },
+      { vn: "Tôi đang đi công tác.", pt: "Estou em viagem de trabalho." },
+      { vn: "Anh sẽ đi công tác ở đâu?", pt: "Para onde você vai viajar a trabalho?" },
+      { vn: "Tuần sau tôi rất bận.", pt: "Semana que vem estou muito ocupado(a)." },
+      { vn: "Tuần trước tôi đã đi Hà Nội.", pt: "Semana passada fui a Hanói." },
+      { vn: "Tháng sau chúng tôi sẽ gặp lại.", pt: "Mês que vem nos reencontramos." },
+      { vn: "Trước khi đi, anh gọi tôi nhé!", pt: "Antes de ir, me liga, tá?" },
+      { vn: "Sau khi về, tôi sẽ liên lạc.", pt: "Depois de voltar, vou entrar em contato." },
+      { vn: "Ngày mai anh có bận không?", pt: "Amanhã você está ocupado(a)?" },
+    ],
+  },
+  {
     id: "emerg", icon: "🆘", cor: "#64748b",
     titulo: "Emergências & Situações Úteis",
     frases: [

@@ -151,6 +151,7 @@ export default function Gramatica() {
           rows={[
             ["<b>sẽ</b>", "Futuro", "Sujeito + <b>sẽ</b> + verbo", "Tôi <b>sẽ</b> đến", "Eu vou / Eu irei"],
             ["", "", "", "Tôi <b>sẽ</b> mua", "Eu vou comprar"],
+            ["", "", "", "Anh <b>sẽ</b> đi công tác", "Você vai a trabalho"],
             ["<b>đã</b>", "Passado", "Sujeito + <b>đã</b> + verbo", "Tôi <b>đã</b> mua", "Eu comprei (já comprei)"],
             ["", "", "", "Anh <b>đã</b> đến", "Ele veio / já chegou"],
           ]}

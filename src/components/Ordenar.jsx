@@ -236,6 +236,42 @@ const SENTENCES = [
     pt: "Aquele gato é muito bonito", en: "That cat is very beautiful",
     explanation: { rule: "'Con mèo' = classificador + subst. · 'kia' = aquele (distante)", pt: "'Con' é o classificador para animais — obrigatório: 'một con mèo' (um gato), não apenas 'một mèo'. 'Kia' = demonstrativo para algo DISTANTE, vem após o substantivo (ou grupo nominal): 'con mèo kia' = aquele gato. Sistema: 'này' (perto) / 'kia' (longe).", en: "'Con' is the classifier for animals — mandatory: 'một con mèo' (one cat), not just 'một mèo'. 'Kia' = demonstrative for something DISTANT, comes after the noun (or noun phrase): 'con mèo kia' = that cat. System: 'này' (near) / 'kia' (far).", tips: ["con mèo = gato ('con' = classificador para animais)", "kia = aquele/aquela (distante — APÓS o substantivo)", "Sistemas demonstrativos: này (este) / kia (aquele)"] },
   },
+  {
+    level: 2,
+    tokens: [
+      { vn: "Tuần sau",  pt: "Semana que vem", en: "Next week", cat: "Expressão" },
+      { vn: "tôi",       pt: "eu",             en: "I",         cat: "Pronome"   },
+      { vn: "sẽ",        pt: "vou",            en: "will",      cat: "Partícula" },
+      { vn: "đi",        pt: "ir a",           en: "go to",     cat: "Verbo"     },
+      { vn: "Hà Nội",    pt: "Hanói",          en: "Hanoi",     cat: "Nome"      },
+    ],
+    pt: "Semana que vem vou a Hanói", en: "Next week I will go to Hanoi",
+    explanation: { rule: "SAU após substantivo temporal = próximo/que vem", pt: "'Tuần sau' = semana que vem — SAU vem sempre APÓS o substantivo temporal. Sistema: TUẦN TRƯỚC (passada) → TUẦN NÀY (esta) → TUẦN SAU (que vem). Mesmo padrão para THÁNG (mês). ATENÇÃO: 'ano passado' = NĂM NGOÁI, nunca 'năm trước'. SẼ marca intenção futura.", en: "'Tuần sau' = next week — SAU always comes AFTER the time noun. System: TUẦN TRƯỚC (last) → TUẦN NÀY (this) → TUẦN SAU (next). Same for THÁNG. WARNING: 'last year' = NĂM NGOÁI, never 'năm trước'. SẼ marks future.", tips: ["tuần sau = semana que vem (SAU após subst. temporal)", "SAU = próximo/depois | NÀY = este | TRƯỚC = passado/antes", "SẼ + đi = vou ir (futuro)"] },
+  },
+  {
+    level: 2,
+    tokens: [
+      { vn: "Tháng trước", pt: "Mês passado", en: "Last month", cat: "Expressão" },
+      { vn: "tôi",          pt: "eu",          en: "I",          cat: "Pronome"   },
+      { vn: "đã",           pt: "fui",         en: "went",       cat: "Partícula" },
+      { vn: "đi",           pt: "a",           en: "to",         cat: "Verbo"     },
+      { vn: "Hà Nội",       pt: "Hanói",       en: "Hanoi",      cat: "Nome"      },
+    ],
+    pt: "Mês passado eu fui a Hanói", en: "Last month I went to Hanoi",
+    explanation: { rule: "TRƯỚC após subst. temporal = passado + ĐÃ para ação concluída", pt: "'Tháng trước' = mês passado — TRƯỚC vem sempre APÓS o substantivo temporal. Sistema: THÁNG TRƯỚC (passado) → THÁNG NÀY (este) → THÁNG SAU (que vem). ATENÇÃO: para 'ano passado' use NĂM NGOÁI, nunca 'năm trước'! ĐÃ antes do verbo indica ação já realizada.", en: "'Tháng trước' = last month — TRƯỚC always comes AFTER the time noun. System: THÁNG TRƯỚC (last) → THÁNG NÀY (this) → THÁNG SAU (next). WARNING: 'last year' = NĂM NGOÁI, never 'năm trước'! ĐÃ marks a completed past action.", tips: ["tháng trước = mês passado (TRƯỚC após subst. temporal)", "ATENÇÃO: NĂM NGOÁI (ano passado), não 'năm trước'!", "ĐÃ + verbo = ação já completada no passado"] },
+  },
+  {
+    level: 2,
+    tokens: [
+      { vn: "Anh Lee",   pt: "O Sr. Lee",  en: "Mr. Lee",     cat: "Nome"      },
+      { vn: "sẽ",        pt: "vai",        en: "will",        cat: "Partícula" },
+      { vn: "đi",        pt: "ir",         en: "go",          cat: "Verbo"     },
+      { vn: "công tác",  pt: "a trabalho", en: "on business", cat: "Expressão" },
+      { vn: "Hàn Quốc",  pt: "na Coreia",  en: "to Korea",    cat: "Nome"      },
+    ],
+    pt: "O Sr. Lee vai a trabalho na Coreia", en: "Mr. Lee will go on a business trip to Korea",
+    explanation: { rule: "ĐI + CÔNG TÁC + lugar (viagem profissional)", pt: "'Đi công tác' = ir a trabalho (missão/viagem profissional). Estrutura: S + SẼ + đi + công tác + [lugar]. Compare: ĐI CÔNG TÁC (trabalho) ≠ ĐI DU LỊCH (turismo) ≠ ĐI CHƠI (passeio). 'Anh Lee' = nome próprio com pronome social 'anh'. SẼ para futuro.", en: "'Đi công tác' = go on a work assignment. Structure: S + SẼ + đi + công tác + [place]. Contrast: ĐI CÔNG TÁC (work) ≠ ĐI DU LỊCH (tourism) ≠ ĐI CHƠI (leisure). SẼ marks future.", tips: ["đi công tác = viagem a trabalho / missão profissional", "Contraste: đi du lịch (turismo) · đi chơi (lazer/passeio)", "SẼ đi công tác = vai fazer viagem de trabalho"] },
+  },
   // ===== LEVEL 3 — DIFÍCIL (7+ tokens) =====
   {
     level: 3,
