@@ -33,6 +33,8 @@
     gramNote: "Substantivo composto: 'bộ' (conjunto/série/classificador para obras) + 'phim' (filme). Em contagem: 'một bộ phim' (um filme). Para elogiar: 'bộ phim này rất hay' (este filme é muito bom — note 'hay' para obras, não 'ngon')." },
   { vn: "Bức tranh",   pt: "Quadro / Pintura",                                  en: "Painting / Picture",                         categoria: "Substantivo",   exemplo: "Bức tranh này rất đẹp",
     gramNote: "Substantivo composto: 'bức' (classificador para quadros/pinturas) + 'tranh' (pintura). 'Bức' é o classificador específico: 'một bức tranh' (um quadro). Para elogiar: usa-se 'đẹp' (bonito), não 'hay' (que é para obras de entretenimento)." },
+  { vn: "Bức",         pt: "Classificador (quadros, fotos, cartas)",              en: "Classifier (paintings, photos, letters)",    categoria: "Classificador", exemplo: "Kia là bức tranh của anh phải không?",
+    gramNote: "BỨC é o classificador para objetos bidimensionais: BỨC TRANH (quadro/pintura), BỨC ẢNH (foto), BỨC THƯ (carta). Estrutura: 'một bức tranh' (um quadro), 'hai bức ảnh' (duas fotos). Não confunda com CON (animais) nem QUẢ (frutas) — cada substantivo tem seu classificador fixo." },
   { vn: "Bút",         pt: "Caneta / Lápis",                                    en: "Pen / Pencil",                               categoria: "Substantivo",   exemplo: "Cái bút của tôi",
     gramNote: "Substantivo para instrumento de escrita. Classificador: 'cái' (para objetos inanimados). 'Một cái bút' = uma caneta. Tipos: 'bút bi' (caneta esferográfica), 'bút chì' (lápis). Posse: 'cái bút của tôi' = minha caneta." },
   { vn: "Bao nhiêu",   pt: "Quanto(s)?",                                        en: "How many? / How much?",                      categoria: "Interrogativo", exemplo: "Anh bao nhiêu tuổi?",
@@ -46,6 +48,8 @@
   // =========================================================
   // C
   // =========================================================
+  { vn: "Cái",         pt: "Classificador (objetos inanimados)",                 en: "Classifier (inanimate objects)",             categoria: "Classificador", exemplo: "Cái ghế này rất đẹp.",
+    gramNote: "CÁI é o classificador mais comum — usado para a maioria dos objetos inanimados: cái bàn (mesa), cái ghế (cadeira), cái bút (caneta), cái điện thoại (celular). Estrutura: CÁI + substantivo + demonstrativo: 'cái ghế này' (esta cadeira). NÃO use para animais (CON) nem livros (QUYỂN). Em contagem: 'một cái bàn' (uma mesa), 'hai cái ghế' (duas cadeiras)." },
   { vn: "Cảm ơn",      pt: "Obrigado(a)",                                       en: "Thank you",                                  categoria: "Expressão",     exemplo: "Cảm ơn bạn!",
     gramNote: "Expressão de gratidão. Complete com pronome para ser mais gentil: 'Cảm ơn anh!' (obrigado, irmão mais velho). Para agradecer formalmente: 'Xin cảm ơn'. Resposta padrão: 'Không có gì' (de nada) ou 'Không sao' (não tem problema)." },
   { vn: "Cậu",         pt: "Tio (irmão mais novo da mãe)",                      en: "Uncle (mother's younger brother)",           categoria: "Pronome",       exemplo: "Cháu chào cậu!",
@@ -68,6 +72,8 @@
     gramNote: "CON GÁI = filha ou menina. CON TRAI = filho ou menino. Para perguntar idade de crianças use MẤY: 'Con gái mấy tuổi?' (não BAO NHIÊU). CON também é classificador para animais: 'một con mèo' (um gato). Sistema familiar: vợ/chồng, con trai, con gái." },
   { vn: "Con trai",    pt: "Filho / Menino",                                    en: "Son / Boy",                                  categoria: "Substantivo",   exemplo: "Đây là con trai tôi. Cháu 12 tuổi.",
     gramNote: "CON TRAI = filho ou menino. 'Đây là con trai tôi' (Este é meu filho). 'Cháu 12 tuổi' = ele tem 12 anos. Sistema familiar: VỢ (esposa), CHỒNG (marido), CON TRAI (filho), CON GÁI (filha)." },
+  { vn: "Con",         pt: "Classificador (animais)",                             en: "Classifier (animals)",                      categoria: "Classificador", exemplo: "Một con mèo và hai con chó.",
+    gramNote: "CON é o classificador para animais: con mèo (gato), con chó (cachorro), con bò (vaca), con gà (galinha), con cá (peixe). Alguns objetos longos também usam CON: con dao (faca), con đường (estrada). Contagem: số + CON + animal: 'một con mèo' (um gato), 'ba con chó' (três cachorros). CON também é prefixo em CON TRAI (filho) e CON GÁI (filha)." },
   { vn: "Cô",          pt: "Tia (irmã do pai)",                                 en: "Aunt (father's sister)",                     categoria: "Pronome",       exemplo: "Cháu chào cô!",
     gramNote: "Pronome para tia paterna (irmã do pai). 'Cô giáo' = professora jovem ou de ensino fundamental (título de respeito). Sistema: 'cô/chú' para irmãos do pai / 'dì/cậu' para irmãos da mãe." },
   { vn: "Có",          pt: "Ter / Haver",                                        en: "To have / There is",                         categoria: "Verbo",         exemplo: "Anh có bận không?",
@@ -166,7 +172,9 @@
   // M
   // =========================================================
   { vn: "Máy tính",    pt: "Computador",                                        en: "Computer",                                   categoria: "Substantivo",   exemplo: "Tôi đã mua máy tính và điện thoại.",
-    gramNote: "MÁY TÍNH = computador (lit. 'máquina de calcular': máy=máquina, tính=calcular). Classificador: 'cái'. TI VI = televisão; XEM TI VI = assistir TV. Frase-exemplo: 'Tôi đã mua máy tính và điện thoại' — ĐÃ para ação passada, VÀ para ligar dois objetos." },
+    gramNote: "MÁY TÍNH = computador (lit. 'máquina de calcular': máy=máquina, tính=calcular). Classificador: 'cái'. Frase-exemplo: 'Tôi đã mua máy tính và điện thoại' — ĐÃ para ação passada, VÀ para ligar dois objetos." },
+  { vn: "Ti vi",       pt: "Televisão / TV",                                     en: "Television / TV",                             categoria: "Substantivo",   exemplo: "Bây giờ cô Young đang xem ti vi.",
+    gramNote: "TI VI = televisão (empréstimo do inglês 'TV'). XEM TI VI = assistir TV. Controles: 'bật ti vi' (ligar a TV), 'tắt ti vi' (desligar a TV). Eletrodomésticos e eletrônicos: MÁY TÍNH (computador), ĐIỆN THOẠI (celular), TI VI (TV). Classificador: cái — 'một cái ti vi' (uma TV)." },
   { vn: "Mấy",         pt: "Quantos? (números pequenos / crianças)",            en: "How many? (small numbers / children's age)", categoria: "Interrogativo", exemplo: "Con gái của anh mấy tuổi?",
     gramNote: "Interrogativo para NÚMEROS PEQUENOS (1–9) e especialmente idade de CRIANÇAS. MẤY vs BAO NHIÊU: 'Con gái mấy tuổi?' (criança) vs 'Anh bao nhiêu tuổi?' (adulto). Para dia da semana: 'Hôm nay là thứ mấy?' (Que dia da semana é hoje?)." },
   { vn: "Mẹ",          pt: "Mãe",                                               en: "Mother",                                     categoria: "Nome",          exemplo: "Mẹ tôi rất đẹp",
