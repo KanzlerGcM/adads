@@ -338,6 +338,35 @@
     gramNote: "'Xin' (gentilmente pedir/por favor) + 'chào' (saudar). Versão formal e completa de 'chào'. Pode ser usada com qualquer pessoa em qualquer situação. Em apresentações: 'Xin chào, tôi là [nome]'. 'Xin' + verbo = polidez: 'Xin lỗi' (desculpe-me — lit. 'peço perdão')." },
   { vn: "Xin lỗi",     pt: "Desculpe / Com licença",                            en: "Sorry / Excuse me",                          categoria: "Expressão",     exemplo: "Xin lỗi, anh tên là gì?",
     gramNote: "XIN (por favor/peço) + LỖI (erro/falta) = 'peço desculpas'. Dois usos: (1) DESCULPE — por erros: 'Xin lỗi, tôi đến muộn' (Desculpe, cheguei tarde); (2) COM LICENÇA — antes de interromper: 'Xin lỗi, anh tên là gì?' (Com licença, como é seu nome?). XIN = partícula de polidez." },
+  // =========================================================
+  // Novas palavras — Lição 4 (Sinh nhật) e Lição 5 (Bây giờ)
+  // =========================================================
+  { vn: "Khi nào / Bao giờ / Lúc nào?", pt: "Quando? (interrogativos de tempo)",  en: "When? (time interrogatives)",     categoria: "Interrogativo", exemplo: "Sinh nhật của anh là bao giờ?",
+    gramNote: "Três formas de perguntar 'quando?': (1) KHI NÀO — geral; (2) BAO GIỜ — com ideia de futuro ou passado (mais comum); (3) LÚC NÀO — em que momento exato. Podem ir no INÍCIO ou FINAL da frase: 'Bao giờ anh sẽ đi?' = 'Anh sẽ đi bao giờ?' (Quando você vai?). KHI NÀO e BAO GIỜ são intercambiáveis na maioria dos contextos." },
+  { vn: "Giờ",                           pt: "Hora / O'clock",                      en: "Hour / O'clock",                  categoria: "Substantivo",   exemplo: "Bây giờ là 9 giờ.",
+    gramNote: "GIỜ = hora (unidade de tempo e para dizer horas no relógio). Formato: NÚMERO + GIỜ (+ PHÚT). '9 giờ' = 9 horas / 9 em ponto. Para perguntar: 'Bây giờ là mấy giờ?' (Que horas são?) / 'Mấy giờ rồi?' (forma casual). GIỜ também aparece em 'giờ học' (hora de aula) e 'giờ làm việc' (hora de trabalho)." },
+  { vn: "Phút",                          pt: "Minuto",                               en: "Minute",                          categoria: "Substantivo",   exemplo: "Bây giờ là 9 giờ 15 phút.",
+    gramNote: "PHÚT = minuto. Formato completo: [hora] GIỜ [minutos] PHÚT. Exemplos: 8:15 = 'tám giờ mười lăm phút'; 10:45 = 'mười một giờ kém mười lăm phút'. PHÚT pode ser omitido na fala casual. Compare: GIỜ (hora), PHÚT (minuto), GIÂY (segundo)." },
+  { vn: "Rưỡi",                          pt: "E meia (:30)",                         en: "Half past (:30)",                 categoria: "Expressão",     exemplo: "Bây giờ là 8 giờ rưỡi.",
+    gramNote: "RƯỠI = 'e meia' (exatamente :30). Atalho: '8 giờ rưỡi' = '8 giờ 30 phút'. RƯỠI vem sempre após GIỜ. Só se usa para :30 exato — outros minutos precisam de PHÚT. Não existe '8 giờ rưỡi 5' (incorreto). Dica: RƯỠI de RƯỠI significa 'metade'." },
+  { vn: "Kém",                           pt: "Menos / Faltam ... minutos",           en: "Less / Minutes to (the hour)",    categoria: "Expressão",     exemplo: "Bây giờ là 9 giờ kém 20 phút.",
+    gramNote: "KÉM = 'menos' / 'faltam'. Usado para horários entre :31 e :59. Estrutura: [PRÓXIMA HORA] GIỜ KÉM [minutos faltando] PHÚT. Exemplos: 8:40 = '9 giờ kém 20 phút' (faltam 20 para as 9); 6:50 = '7 giờ kém 10 phút'. Lógica: olha para a PRÓXIMA hora, não para a atual." },
+  { vn: "Buổi sáng / trưa / chiều / tối", pt: "Manhã / Meio-dia / Tarde / Noite",   en: "Morning / Noon / Afternoon / Evening", categoria: "Expressão",  exemplo: "9 giờ sáng · 12 giờ trưa · 3 giờ chiều · 8 giờ tối",
+    gramNote: "Sistema de 12 horas com período do dia: SÁNG (manhã: 1h–10h), TRƯA (ao meio-dia: 11h–12h), CHIỀU (tarde: 13h–18h), TỐI (noite: 19h–22h), ĐÊM (madrugada: após 22h). Uso: hora + período: '9 giờ sáng' (9 da manhã), '3 giờ chiều' (3 da tarde). BUỔI pode anteceder qualquer um: 'buổi sáng' = 'de manhã' sem hora específica." },
+  { vn: "Lúc",                           pt: "Às (horário) / Na hora de",            en: "At (a time)",                    categoria: "Preposição",    exemplo: "Em về nhà lúc 4 giờ chiều.",
+    gramNote: "LÚC = 'às' (para indicar o horário de uma ação). Estrutura: S + V + LÚC + horário. Para perguntar: 'S + V + LÚC MẤY GIỜ?' = 'A que horas vai [fazer]?'. Exemplos: 'Anh ngủ lúc mấy giờ?' (A que horas você dorme?) / 'Tôi ngủ lúc 10 giờ tối.' (Durmo às 10 da noite.) Diferença com KHI: LÚC indica momento específico, KHI é mais geral." },
+  { vn: "Lớp học",                       pt: "Aula / Sala de aula / Turma",          en: "Class / Classroom",               categoria: "Substantivo",   exemplo: "Mấy giờ lớp học sẽ kết thúc?",
+    gramNote: "LỚP = turma/classe/andar. HỌC = estudar. LỚP HỌC = aula ou sala de aula. Outros compostos: GIỜ HỌC (hora de aula), BÀI HỌC (lição), PHÒNG HỌC (sala de aula — o espaço físico). Para perguntar horário: 'Mấy giờ lớp học sẽ kết thúc?' = 'A que horas a aula vai terminar?'" },
+  { vn: "Kết thúc",                      pt: "Terminar / Acabar / Finalizar",        en: "End / Finish",                    categoria: "Verbo",         exemplo: "Lớp học kết thúc lúc 5 giờ chiều.",
+    gramNote: "KẾT THÚC = terminar, acabar, finalizar (ação chega ao fim). Frase do curso: 'Lớp học kết thúc lúc 5 giờ chiều.' (A aula termina às 5 da tarde.) Sinônimo mais informal: XONG (acabar/terminar uma tarefa). Para perguntar: 'Mấy giờ kết thúc?' = 'A que horas termina?'" },
+  { vn: "Về nhà",                        pt: "Ir para casa / Voltar para casa",      en: "Go home / Return home",           categoria: "Verbo",         exemplo: "Em về nhà lúc 4 giờ chiều.",
+    gramNote: "VỀ = voltar/retornar. VỀ NHÀ = ir/voltar para casa. VỀ NHÀ SỚM = chegar em casa cedo. Frase do curso: 'Em về nhà lúc 4 giờ chiều.' (Vou para casa às 4 da tarde.) Não se usa 'đi nhà' para ir para casa em vietnamita — sempre use VỀ NHÀ. Compare: ĐI (ir, destino genérico) vs VỀ (retornar ao ponto de origem)." },
+  { vn: "Phải + V",                      pt: "Ter que / Precisar (obrigação)",       en: "Have to / Must (obligation)",     categoria: "Modal",         exemplo: "Em phải đón con.",
+    gramNote: "PHẢI + VERBO = 'ter que' / 'ser obrigado a'. Estrutura: S + PHẢI + verbo + complemento. Exemplos: 'Tôi phải đi học' (Tenho que ir estudar), 'Anh phải làm việc hôm nay' (Você tem que trabalhar hoje). ATENÇÃO: PHẢI KHÔNG? (tag question 'não é?') é uso totalmente diferente — PHẢI aqui é verbo modal de obrigação necessidade." },
+  { vn: "Đón",                           pt: "Buscar / Pegar (alguém)",              en: "Pick up (someone)",               categoria: "Verbo",         exemplo: "Em phải đón con.",
+    gramNote: "ĐÓN = buscar / ir pegar alguém em algum lugar. ĐÓN CON = buscar filho(a) (na escola etc.); ĐÓN KHÁCH = receber/buscar um hóspede. Frase real do curso: 'Em phải đón con.' (Tenho que buscar meu filho.) Diferente de NHẬN (receber algo físico) — ĐÓN é para pessoas." },
+  { vn: "Khoảng",                        pt: "Por volta de / Aproximadamente",       en: "Around / Approximately",          categoria: "Advérbio",      exemplo: "Khoảng 5 giờ chiều.",
+    gramNote: "KHOẢNG = 'por volta de' / 'aproximadamente'. Vem antes de números (horas, idades, quantidades). Exemplos: 'Khoảng 5 giờ chiều' (por volta das 5 da tarde); 'khoảng 30 tuổi' (por volta de 30 anos); 'khoảng 10 phút' (cerca de 10 minutos). Para horários aproximados: 'Khoảng mấy giờ?' = 'Por volta de que horas?'" },
 ];
 
 export const categorias = [...new Set(palavras.map(p => p.categoria))].sort();
@@ -360,4 +389,5 @@ export const CAT_COLORS = {
   'Profissão':     { bg: '#ecfdf5', text: '#065f46' },
   'Confirmação':   { bg: '#f0fdf4', text: '#15803d' },
   'Classificador': { bg: '#fef3c7', text: '#92400e' },
+  'Modal':         { bg: '#fce7f3', text: '#831843' },
 };
