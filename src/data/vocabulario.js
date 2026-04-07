@@ -43,6 +43,8 @@
     gramNote: "Profissão: médico/médica. Com LÀ: 'Tôi là bác sĩ' (Sou médico). Profissões comuns: giáo viên (professor), sinh viên (estudante), bác sĩ (médico), kỹ sư (engenheiro). Ao cumprimentar: 'Chào bác sĩ!' — o título funciona como pronome de respeito." },
   { vn: "Bây giờ",     pt: "Agora",                                             en: "Now",                                        categoria: "Expressão",     exemplo: "Bây giờ tôi đang học tiếng Việt.",
     gramNote: "Expressão temporal para o MOMENTO PRESENTE. INDICADOR de ĐANG (presente contínuo). SISTEMA: HÔM QUA (ontem) → ĐÃ | BÂY GIỜ (agora) → ĐANG | NGÀY MAI (amanhã) → SẼ. Posição preferida: início da frase: 'Bây giờ tôi đang làm...' (Agora estou fazendo...)." },
+  { vn: "Bây giờ là mấy giờ? / Mấy giờ rồi?", pt: "Que horas são? (duas formas)", en: "What time is it? (two forms)", categoria: "Expressão", exemplo: "Bây giờ là mấy giờ? — Bây giờ là 8 giờ rưỡi.",
+    gramNote: "Duas formas de perguntar as horas: (1) 'Bây giờ là mấy giờ?' — mais completa/formal; (2) 'Mấy giờ rồi?' — mais casual (lit. 'que horas já?'). RỒI = já / partícula de estado atual. Para responder: 'Bây giờ là [número] giờ [minutos].' Exemplos: 'Bây giờ là 9 giờ sáng' (São 9 da manhã) / 'Bây giờ là 8 giờ rưỡi' (São 8 e meia)." },
   { vn: "Bình thường", pt: "Normal / Mais ou menos",                            en: "Normal / So-so",                             categoria: "Adjetivo",      exemplo: "Tôi bình thường. Còn anh?",
     gramNote: "Adjetivo para estado neutro — nem bom nem ruim. Resposta honesta para 'Anh có khoẻ không?'. Diferente de 'rất khoẻ' (muito bem). Use com CÒN para devolver: 'Tôi bình thường, còn anh?' (Estou normal, e você?)." },
   // =========================================================
@@ -89,8 +91,8 @@
   // =========================================================
   { vn: "Dì",          pt: "Tia (irmã mais nova da mãe)",                       en: "Aunt (mother's younger sister)",             categoria: "Pronome",       exemplo: "Cháu chào dì!",
     gramNote: "Pronome para tia materna mais jovem que a mãe. Par feminino de 'cậu'. Sistema familiar completo: Irmãos da MÃE: 'cậu' (irmão mais novo) / 'dì' (irmã mais nova) / 'bác' (mais velho que a mãe). Irmãos do PAI: 'chú' / 'cô' / 'bác'." },
-  { vn: "Dạy",         pt: "Ensinar / Dar aula",                                en: "To teach",                                   categoria: "Verbo",         exemplo: "Tôi dạy ở trường đại học.",
-    gramNote: "DẠY = ensinar. DẠY HỌC = dar aula. TRƯỜNG = escola. TRƯỜNG ĐẠI HỌC = universidade. Estrutura: 'Tôi dạy tiếng Anh' (Ensino inglês). Para perguntar: 'Anh dạy ở đâu?' (Onde você ensina?). Oposto: HỌC (aprender/estudar)." },
+  { vn: "Dạy / Dạy học", pt: "Ensinar / Dar aula",                              en: "To teach",                                   categoria: "Verbo",         exemplo: "Tôi dạy ở trường đại học.",
+    gramNote: "DẠY = ensinar. DẠY HỌC = dar aula (forma composta enfatizando o ato de lecionar). TRƯỜNG = escola. TRƯỜNG ĐẠI HỌC = universidade. Estrutura: 'Tôi dạy tiếng Anh' (Ensino inglês). Para perguntar: 'Anh dạy ở đâu?' (Onde você ensina?). Oposto: HỌC (aprender/estudar)." },
   // =========================================================
   // Đ
   // =========================================================
@@ -98,8 +100,8 @@
     gramNote: "Marcador de tempo PASSADO. Posição: ĐÃ + verbo: 'Tôi đã ăn' (Já comi). HÔM QUA (ontem) → indicador de ĐÃ. SISTEMA: ĐÃ (passado) | ĐANG (contínuo) | SẼ (futuro). O verbo nunca muda. Exemplos: đã ăn (já comi), đã học (já estudei), đã đi (já fui), đã mua (já comprei)." },
   { vn: "Đang",        pt: "Está fazendo... (presente contínuo)",               en: "Currently / -ing form",                      categoria: "Partícula",     exemplo: "Tôi đang học tiếng Việt.",
     gramNote: "Marcador de presente CONTÍNUO — ação acontecendo AGORA. ĐANG + verbo. BÂY GIỜ (agora) → indicador de ĐANG. SISTEMA: ĐÃ | ĐANG | SẼ. Exemplos: đang làm việc (está trabalhando), đang học (está estudando), đang ăn (está comendo). O verbo nunca muda de forma." },
-  { vn: "Đâu",         pt: "Onde? (interrogativo de lugar)",                    en: "Where? (interrogative)",                     categoria: "Interrogativo", exemplo: "Nhà bạn ở đâu?",
-    gramNote: "Interrogativo de lugar. Em vietnamita, palavras interrogativas vêm no FINAL da frase: 'Nhà bạn ở đâu?' (lit. 'Casa você está onde?'). Compare: 'đây' (aqui), 'đó/kia' (ali/lá), 'đâu đó' (em algum lugar). Essencial para perguntas de direção ou localização." },
+  { vn: "Đâu / Ở đâu",  pt: "Onde? / Em que lugar? (interrogativo)",           en: "Where? (interrogative)",                     categoria: "Interrogativo", exemplo: "Anh đang làm việc ở đâu?",
+    gramNote: "ĐÂU = 'onde?' (interrogativo de lugar). Ở ĐÂU = 'em que lugar?' (literalmente: ở + đâu). Exemplos: 'Nhà bạn ở đâu?' (Onde é sua casa?), 'Anh đang làm việc ở đâu?' (Onde você está trabalhando?), 'Em đang ở đâu?' (Onde você está?). As interrogativas vão sempre ao FINAL da frase em vietnamita." },
   { vn: "Đây",         pt: "Aqui / Este (antes do verbo)",                      en: "Here / This (before verb)",                  categoria: "Demonstrativo", exemplo: "Đây là nhà tôi",
     gramNote: "Demonstrativo com dois usos: (1) AQUI — indica posição: 'Tôi ở đây' (estou aqui); (2) ESTE/ESTA — antes de 'là': 'Đây là nhà tôi' (esta é minha casa). Contraste com 'này': 'này' vem APÓS o substantivo ('sách này'), 'đây' vem ANTES do verbo 'là'." },
   { vn: "Đẹp",         pt: "Bonito(a)",                                         en: "Beautiful / Pretty",                         categoria: "Adjetivo",      exemplo: "Cô ấy rất đẹp",
@@ -136,8 +138,8 @@
     gramNote: "Adjetivo com uso ESPECÍFICO: avalia qualidade de obras (livros, filmes, músicas, histórias). NÃO use para pessoas (use 'tốt') ou comida (use 'ngon'). 'Phim này hay' (este filme é bom), 'bài hát này hay' (esta música é boa). Para intensificar: 'rất hay', 'hay quá!'." },
   { vn: "Hàn Quốc",    pt: "Coreia do Sul",                                     en: "South Korea",                                categoria: "Nome",          exemplo: "Anh ấy sẽ làm việc ở Hàn Quốc.",
     gramNote: "Nome da Coreia do Sul (República da Coreia). Gentílico: 'người Hàn Quốc' (coreano/a). TRIỀU TIÊN = Coreia do Norte. Países asiáticos: Hàn Quốc (Coreia do Sul), Nhật Bản (Japão), Trung Quốc (China). Com 'ở' para localização: 'làm việc ở Hàn Quốc'." },
-  { vn: "Hôm kia",     pt: "Anteontem",                                         en: "Day before yesterday",                       categoria: "Expressão",     exemplo: "Hôm kia tôi đã đi Hà Nội.",
-    gramNote: "Linha do tempo de DIAS: HÔM KIA (anteontem) → HÔM QUA (ontem) → HÔM NAY (hoje) → NGÀY MAI (amanhã) → NGÀY KIA (depois de amanhã). KIA = 'lá/distante'. HÔM KIA usa ĐÃ (passado). Note: NGÀY KIA = depois de amanhã (não confundir com HÔM KIA)." },
+  { vn: "Hôm kia / Ngày kia", pt: "Anteontem / Depois de amanhã",              en: "Day before yesterday / Day after tomorrow",  categoria: "Expressão",     exemplo: "Hôm kia là thứ hai, ngày kia là thứ tư.",
+    gramNote: "Linha do tempo completa: HÔM KIA (anteontem) → HÔM QUA (ontem) → HÔM NAY (hoje) → NGÀY MAI (amanhã) → NGÀY KIA (depois de amanhã). KIA = 'lá/distante'. Marcadores: HÔM KIA → ĐÃ (passado); NGÀY KIA → SẼ (futuro). Diferença: HÔM KIA para o passado, NGÀY KIA para o futuro." },
   { vn: "Hôm nay",     pt: "Hoje",                                              en: "Today",                                      categoria: "Expressão",     exemplo: "Hôm nay là thứ tư, ngày 1 tháng 4.",
     gramNote: "Expressão temporal para 'hoje'. HÔM NAY pode usar qualquer marcador de tempo conforme contexto. Fórmula para datas: 'Hôm nay là [dia da semana], ngày [número] tháng [número].' Contraste: HÔM QUA (ontem), HÔM NAY (hoje), NGÀY MAI (amanhã)." },
   { vn: "Hôm qua",     pt: "Ontem",                                             en: "Yesterday",                                  categoria: "Expressão",     exemplo: "Hôm qua tôi đã đi ngân hàng.",
@@ -319,6 +321,8 @@
     gramNote: "TRƯỜNG = escola (genérico). TRƯỜNG ĐẠI HỌC = universidade (lit. 'escola de estudo superior'). Níveis: TRƯỜNG MẦM NON (pré-escola), TRƯỜNG TIỂU HỌC (fundamental), TRƯỜNG TRUNG HỌC (médio), TRƯỜNG ĐẠI HỌC (universidade). ĐẠI HỌC QUỐC GIA = Universidade Nacional." },
   { vn: "Tuần",        pt: "Semana",                                            en: "Week",                                       categoria: "Substantivo",   exemplo: "Tuần sau là sinh nhật của mẹ em.",
     gramNote: "TUẦN = semana. Padrão temporal: TUẦN TRƯỚC (semana passada), TUẦN NÀY (esta semana), TUẦN SAU (semana que vem). HAI TUẦN SAU = em duas semanas. Paralelismo: THÁNG (mês), TUẦN (semana). ATENÇÃO para ANO: NĂM NGOÁI ✓, NĂM TRƯỚC ✗ (ver Năm ngoái/nay/sau)." },
+  { vn: "Tuần trước / Tuần sau / Tuần này", pt: "Semana passada / Semana que vem / Esta semana", en: "Last week / This week / Next week", categoria: "Expressão", exemplo: "Tuần trước tôi đã đi Hà Nội. Tuần này tôi ở nhà. Tuần sau là sinh nhật của mẹ.",
+    gramNote: "Sistema temporal de SEMANAS: TUẦN TRƯỚC (semana passada) → usa ĐÃ | TUẦN NÀY (esta semana) → depende do contexto | TUẦN SAU (semana que vem) → usa SẼ. Mesmo padrão para meses: THÁNG TRƯỚC / THÁNG NÀY / THÁNG SAU. ATENÇÃO: para ANO a exceção é NĂM NGOÁI (não TUẦN TRƯỚC). HAI TUẦN TRƯỚC = há duas semanas. HAI TUẦN SAU = em duas semanas." },
   { vn: "Tuổi",        pt: "Idade / Anos de idade",                             en: "Age / Years old",                            categoria: "Substantivo",   exemplo: "Anh bao nhiêu tuổi? — Anh 30 tuổi.",
     gramNote: "Estrutura para idade: Pronome + [número] + TUỔI. SEM VERBO — não se diz 'Tôi LÀ 30 tuổi'. 'Anh bao nhiêu tuổi?' (adulto) vs 'Cháu mấy tuổi?' (criança). Exemplos: 'Tôi 25 tuổi' (Tenho 25 anos), 'Cháu 7 tuổi' (A criança tem 7 anos). TUỔI tem tom hỏi." },
   { vn: "Tuyệt",       pt: "Ótimo / Fantástico",                                en: "Great / Fantastic",                          categoria: "Adjetivo",      exemplo: "Rất tuyệt!",
