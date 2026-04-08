@@ -12,6 +12,7 @@ import Ordenar     from "./components/Ordenar";
 import GeminiChat    from "./components/GeminiChat";
 import Homework      from "./components/Homework";
 import HomeworkList  from "./components/HomeworkList";
+import PDFs          from "./components/PDFs";
 import { LangProvider, useLang } from "./contexts/LangContext";
 
 const TABS_OVERVIEW  = [{ id: "inicio", label: "Início",    icon: "🏠" }];
@@ -30,6 +31,9 @@ const TABS_PRACTICE = [
 ];
 const TABS_HOMEWORK = [
   { id: "homework", label: "Tarefa",  icon: "📝" },
+];
+const TABS_PDFS = [
+  { id: "pdfs", label: "PDFs", icon: "📋" },
 ];
 
 function AppInner() {
@@ -76,6 +80,13 @@ function AppInner() {
               <span>{t.label}</span>
             </button>
           ))}
+          <div className="sidebar-section-label">{lang === "en" ? "Classes" : "Aulas"}</div>
+          {TABS_PDFS.map((t) => (
+            <button key={t.id} className={`nav-btn ${tab === t.id ? "active" : ""}`} onClick={() => setTab(t.id)}>
+              <span className="nav-icon">{t.icon}</span>
+              <span>{t.label}</span>
+            </button>
+          ))}
         </nav>
         <div className="sidebar-footer">
           <button
@@ -103,6 +114,7 @@ function AppInner() {
           {tab === "ordenar"  && <Ordenar />}
           {tab === "homework" && !openHwId && <HomeworkList onOpen={(id) => setOpenHwId(id)} />}
           {tab === "homework" && openHwId  && <Homework hwId={openHwId} onBack={() => setOpenHwId(null)} />}
+          {tab === "pdfs"     && <PDFs />}
         </div>
       </main>
       <GeminiChat />
