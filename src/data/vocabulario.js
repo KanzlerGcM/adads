@@ -431,6 +431,38 @@
     gramNote: "KHOẢNG = 'por volta de' / 'aproximadamente'. Vem antes de números (horas, idades, quantidades). Exemplos: 'Khoảng 5 giờ chiều' (por volta das 5 da tarde); 'khoảng 30 tuổi' (por volta de 30 anos); 'khoảng 10 phút' (cerca de 10 minutos). Para horários aproximados: 'Khoảng mấy giờ?' = 'Por volta de que horas?'" },
   // =========================================================
   // Revisão dos PDFs — palavras encontradas nos PDFs mas faltando no vocabulário
+  // PDF 01 (Prática de Pronúncia) — vocabulário com tradução explícita
+  // =========================================================
+  { vn: "Nền nhà",  pt: "Chão / Piso",           en: "Floor",              categoria: "Substantivo",   exemplo: "Nền nhà này rất đẹp.",
+    gramNote: "NỀN NHÀ = chão / piso (superfície de uma casa). NỀN = base/fundação, NHÀ = casa. Aparece no PDF de Pronúncia como exemplo da terminação '-ên'. Compostos com NỀN: 'nền đất' (chão de terra), 'nền gạch' (piso de cerâmica). Adjetivos comuns para descrever o chão: ĐẸP (bonito), RỘNG (espaçoso), SẠCH (limpo). Área da casa: NỀN NHÀ (chão), TƯỜNG (parede), TRẦN NHÀ (teto)." },
+  { vn: "Đếm",      pt: "Contar (números)",       en: "To count",           categoria: "Verbo",         exemplo: "Tôi đang đếm tiền.",
+    gramNote: "ĐẾM = contar (ação de enumerar). Aparece no PDF de Pronúncia junto a ĐẾN (chegar) — sons parecidos, tons diferentes. ĐẾN (tom sắc, alto-crescente) vs ĐẾM (tom huyền, descendente). Estrutura: S + đếm + [objeto]: 'Đếm từ 1 đến 10' (Contar de 1 a 10). Contextos: 'Đếm tiền' (contar dinheiro), 'Đếm người' (contar pessoas). Não confundir com ĐỌC (ler) nem TÍNH (calcular)." },
+  // =========================================================
+  // PDF 07 (Família) e PDF 11 (Idade e Trabalho) — frases da conversa
+  // =========================================================
+  { vn: "Đi làm",   pt: "Ir trabalhar",           en: "Go to work",         categoria: "Verbo",         exemplo: "Bố mẹ tôi đều đi làm.",
+    gramNote: "ĐI LÀM = ir trabalhar (foco no ato de sair para o trabalho). ĐI = ir + LÀM = fazer/trabalhar. Frase do PDF Família: 'Bố mẹ tôi đều đi làm' (Meus pais ambos vão trabalhar). Compare: LÀM VIỆC (trabalhar — foco na atividade em si) vs ĐI LÀM (ir ao trabalho — foco no deslocamento). Perguntas: 'Anh có đi làm không?' (Você vai trabalhar?) / 'Mấy giờ anh đi làm?' (A que horas você vai trabalhar?)." },
+  // =========================================================
+  // PDF 08 (Horas) — exemplos da gramática
+  // =========================================================
+  { vn: "Đi học",   pt: "Ir estudar / Ir à escola", en: "Go to school/study", categoria: "Verbo",       exemplo: "Tôi phải đi học.",
+    gramNote: "ĐI HỌC = ir estudar / ir à escola (foco no deslocamento até o local de estudo). ĐI = ir + HỌC = estudar. Frase do PDF Horas: 'Tôi phải đi học' (Tenho que ir estudar). Compare: HỌC (estudar em geral) vs ĐI HỌC (ir ao local de estudo). Série de ĐI + destino/atividade: ĐI LÀM (ir trabalhar), ĐI HỌC (ir estudar), ĐI CHỢ (ir ao mercado), ĐI NGỦ (ir dormir). Perguntas: 'Khi nào em đi học?' (Quando você vai à escola?)" },
+  // =========================================================
+  // PDF 09 (Casa) — vocabulário do diálogo
+  // =========================================================
+  { vn: "Ngồi",     pt: "Sentar / Sentar-se",     en: "To sit / Sit down",  categoria: "Verbo",         exemplo: "Mời anh ngồi!",
+    gramNote: "NGỒI = sentar / estar sentado. Verbo essencial de postura. Frase do PDF Casa: 'Mời anh ngồi!' (Por favor, sente-se! — lit. convido você a sentar). 'Mời + pronome + ngồi' = expressão de hospitalidade para convidar alguém a se sentar. Compare posturas: NGỒI (sentado), ĐỨNG (em pé), NẰM (deitado). 'Ngồi xuống' (sentar-se agora — xuống = para baixo)." },
+  // =========================================================
+  // PDF 11 (Idade e Trabalho) — vocabulário explícito do PDF
+  // =========================================================
+  { vn: "Trường",   pt: "Escola (em geral)",       en: "School (general)",   categoria: "Substantivo",   exemplo: "Anh dạy ở trường nào?",
+    gramNote: "TRƯỜNG = escola ou instituição de ensino (termo genérico). O PDF de Idade e Trabalho ensina: 'Trường: School (In general)' vs 'Trường đại học: University'. Tipos: TRƯỜNG MẦM NON (pré-escola), TRƯỜNG TIỂU HỌC (fundamental), TRƯỜNG TRUNG HỌC (médio), TRƯỜNG ĐẠI HỌC (universidade). Uso: 'Đi học ở trường nào?' (Em qual escola você estuda?). Compare: TRƯỜNG (escola física) vs LỚP HỌC (a aula/turma)." },
+  // =========================================================
+  // Aparece em múltiplos PDFs como marcador de 3ª pessoa
+  // =========================================================
+  { vn: "Ấy",       pt: "Ele / Ela (contexto anterior)",  en: "He / She (contextual 3rd person)", categoria: "Pronome", exemplo: "Cô ấy rất đẹp. Anh ấy là bác sĩ.",
+    gramNote: "ẤY = pronome de 3ª pessoa APÓS um pronome social — indica que se fala SOBRE a pessoa, não COM ela. Sistema: ANH ẤY (ele, homem mais velho), CHỊ ẤY (ela, mulher mais velha), EM ẤY (ele/ela mais novo/a), CÔ ẤY (ela, professora/tia), CHỒNG CỦA CÔ ẤY (o marido dela). Frase do PDF Casa: 'Cô ấy rất đẹp.' (Ela é muito bonita.). ẤY NUNCA abre a frase — sempre depois do pronome social. Diferente: ĐÓ (aquele, demonstrativo) vs ẤY (ele/ela como sujeito de referência)." },
+  // =========================================================
   // PDFs 02/03 (Vogais/Consoantes) — palavras-exemplo dos exercícios de fonética
   // =========================================================
   { vn: "Ô tô",   pt: "Carro",             en: "Car",            categoria: "Substantivo",   exemplo: "Ô tô của anh rất đẹp.",
