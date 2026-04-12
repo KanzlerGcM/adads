@@ -1,24 +1,14 @@
 {
   "manifest_version": 3,
   "name": "📚 Vietnamita — Vocabulário",
-  "version": "1.2",
+  "version": "1.0",
   "description": "Overlay de vocabulário vietnamita em qualquer página. Ctrl+Shift+V para abrir/fechar.",
-  "permissions": ["activeTab", "scripting"],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
   },
   "action": {
-    "default_title": "Abrir/fechar vocabulário"
-  },
-  "commands": {
-    "toggle-overlay": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+V",
-        "mac": "Command+Shift+V"
-      },
-      "description": "Abrir/fechar vocabulário vietnamita"
-    }
+    "default_title": "Abrir/fechar vocabulário (Ctrl+Shift+V)"
   },
   "content_scripts": [
     {
