@@ -1,66 +1,94 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect } from "react";
 import { palavras, categorias, CAT_COLORS } from "../data/vocabulario";
 
-const iconBtnStyle = {
+const iconBtn = (extra = {}) => ({
   background: "rgba(255,255,255,0.18)", border: "none", color: "white",
   cursor: "pointer", borderRadius: 5, padding: "3px 8px",
   fontSize: 13, fontWeight: 700, lineHeight: 1, fontFamily: "inherit",
-};
+  flexShrink: 0,
+  ...extra,
+});
 
 const thStyle = {
   textAlign: "left", padding: "6px 10px",
   fontSize: 10, fontWeight: 700, textTransform: "uppercase",
   letterSpacing: "0.05em", color: "var(--text-muted)",
   borderBottom: "2px solid var(--border)", background: "var(--bg-card)",
+  position: "sticky", top: 0, zIndex: 1,
+};
+
+const STORAGE_POS = "vn_overlay_pos";
+
+const loadPos = () => {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_POS));
+    if (saved && typeof saved.x === "number") return saved;
+  } catch {}
+  return { x: Math.max(10, window.innerWidth - 440), y: 80 };
 };
 
 export default function VocabOverlay() {
   const [open, setOpen]           = useState(false);
   const [minimized, setMinimized] = useState(false);
+  const [pinned, setPinned]       = useState(false);   // 📌 locked position
   const [search, setSearch]       = useState("");
   const [catFilter, setCatFilter] = useState("Todos");
-  const [pos, setPos]             = useState(() => ({
-    x: Math.max(10, window.innerWidth - 440),
-    y: 80,
-  }));
-  const [dragging, setDragging]   = useState(false);
-  const dragRef                   = useRef(null);
+  const [pos, setPos]             = useState(loadPos);
+  const dragging                  = useRef(false);
+  const dragStart                 = useRef(null);
 
   // Ctrl+Shift+V to toggle
   useEffect(() => {
     const handler = (e) => {
-      if (e.ctrlKey && e.shiftKey && e.key === "V") {
-        setOpen((o) => !o);
-      }
+      if (e.ctrlKey && e.shiftKey && e.key === "V") setOpen((o) => !o);
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, []);
 
-  const onMouseDown = useCallback(
-    (e) => {
-      e.preventDefault();
-      dragRef.current = { mx: e.clientX, my: e.clientY, px: pos.x, py: pos.y };
-      setDragging(true);
-    },
-    [pos]
-  );
-
+  // Global drag handlers — attached once, always listening
   useEffect(() => {
-    if (!dragging) return;
     const onMove = (e) => {
-      const dx = e.clientX - dragRef.current.mx;
-      const dy = e.clientY - dragRef.current.my;
-      setPos({ x: dragRef.current.px + dx, y: dragRef.current.py + dy });
+      if (!dragging.current || !dragStart.current) return;
+      const dx = e.clientX - dragStart.current.mx;
+      const dy = e.clientY - dragStart.current.my;
+      setPos({ x: dragStart.current.px + dx, y: dragStart.current.py + dy });
     };
-    const onUp = () => setDragging(false);
+
+    // Stop dragging on mouseup OR when window loses focus (fixes "stuck drag")
+    const stopDrag = () => {
+      dragging.current = false;
+      dragStart.current = null;
+      document.body.style.userSelect = "";
+      document.body.style.cursor = "";
+    };
+
     window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseup", onUp);
+    window.addEventListener("mouseup", stopDrag);
+    window.addEventListener("blur", stopDrag);
+    window.addEventListener("visibilitychange", stopDrag);
     return () => {
       window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("mouseup", onUp);
+      window.removeEventListener("mouseup", stopDrag);
+      window.removeEventListener("blur", stopDrag);
+      window.removeEventListener("visibilitychange", stopDrag);
     };
-  }, [dragging]);
+  }, []);
+
+  // Save position to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem(STORAGE_POS, JSON.stringify(pos));
+  }, [pos]);
+
+  const startDrag = (e) => {
+    if (pinned) return;            // locked — don't move
+    if (e.button !== 0) return;    // only left mouse button
+    e.preventDefault();
+    dragging.current = true;
+    dragStart.current = { mx: e.clientX, my: e.clientY, px: pos.x, py: pos.y };
+    document.body.style.userSelect = "none";
+    document.body.style.cursor = "grabbing";
+  };
 
   const filtered = palavras.filter((p) => {
     const q = search.toLowerCase();
@@ -69,24 +97,24 @@ export default function VocabOverlay() {
       p.vn.toLowerCase().includes(q) ||
       p.pt.toLowerCase().includes(q) ||
       (p.en && p.en.toLowerCase().includes(q));
-    const matchCat = catFilter === "Todos" || p.categoria === catFilter;
-    return matchSearch && matchCat;
+    return matchSearch && (catFilter === "Todos" || p.categoria === catFilter);
   });
 
-  const openPopup = () => {
+  const openPopup = (e) => {
+    e.stopPropagation();
     window.open(
       window.location.origin + window.location.pathname + "?mode=popup",
       "vocab_popup",
-      "width=480,height=680,resizable=yes,scrollbars=yes"
+      "width=520,height=700,resizable=yes,scrollbars=yes"
     );
   };
 
-  // Floating trigger button when closed
+  // ——— Closed state: floating trigger button ———
   if (!open) {
     return (
       <button
         onClick={() => setOpen(true)}
-        title="Busca de vocabulário (Ctrl+Shift+V)"
+        title="Busca rápida de vocabulário (Ctrl+Shift+V)"
         style={{
           position: "fixed", bottom: 88, right: 24, zIndex: 8000,
           width: 50, height: 50, borderRadius: "50%",
@@ -105,75 +133,101 @@ export default function VocabOverlay() {
           e.currentTarget.style.boxShadow = "0 4px 18px rgba(79,70,229,0.45)";
         }}
       >
-        🔍
+        📚
       </button>
     );
   }
 
+  const isMinimized = minimized;
+  const headerRadius = isMinimized ? "var(--radius)" : "var(--radius) var(--radius) 0 0";
+
   return (
     <div
+      onMouseDown={(e) => e.stopPropagation()} // prevent clicks from bubbling to page
       style={{
         position: "fixed",
-        left: pos.x,
-        top: pos.y,
+        left: Math.max(0, Math.min(pos.x, window.innerWidth - 420)),
+        top: Math.max(0, Math.min(pos.y, window.innerHeight - 60)),
         width: 410,
         zIndex: 9000,
         background: "var(--bg-card)",
-        border: "1.5px solid var(--border)",
+        border: pinned
+          ? "2px solid var(--primary)"
+          : "1.5px solid var(--border)",
         borderRadius: "var(--radius)",
         boxShadow: "0 20px 60px rgba(0,0,0,0.22)",
         display: "flex",
         flexDirection: "column",
-        userSelect: dragging ? "none" : "auto",
       }}
     >
-      {/* ——— Drag header ——— */}
+      {/* ——— Header / drag handle ——— */}
       <div
-        onMouseDown={onMouseDown}
+        onMouseDown={startDrag}
         style={{
           padding: "9px 12px",
-          background: "var(--primary)",
-          borderRadius: minimized
-            ? "var(--radius)"
-            : "var(--radius) var(--radius) 0 0",
+          background: pinned ? "#3730a3" : "var(--primary)",
+          borderRadius: headerRadius,
           display: "flex",
           alignItems: "center",
-          gap: 7,
-          cursor: dragging ? "grabbing" : "grab",
+          gap: 6,
+          cursor: pinned ? "default" : "grab",
+          transition: "background 0.2s",
         }}
       >
-        <span style={{ fontSize: 14, color: "white", fontWeight: 700, flex: 1, pointerEvents: "none" }}>
+        <span style={{ fontSize: 14, color: "white", fontWeight: 700, flex: 1, pointerEvents: "none", userSelect: "none" }}>
           📚 Vocabulário
         </span>
-        <span style={{ fontSize: 10, color: "rgba(255,255,255,0.55)", marginRight: 4, pointerEvents: "none" }}>
-          Ctrl+Shift+V
-        </span>
-        <button onClick={openPopup} title="Abrir em janela separada" style={iconBtnStyle}>↗</button>
+
+        {/* Pin button */}
         <button
-          onClick={() => setMinimized((m) => !m)}
-          title={minimized ? "Expandir" : "Minimizar"}
-          style={iconBtnStyle}
+          onMouseDown={(e) => e.stopPropagation()}
+          onClick={(e) => { e.stopPropagation(); setPinned((p) => !p); }}
+          title={pinned ? "Desafixar (pode arrastar)" : "Fixar posição"}
+          style={iconBtn({ background: pinned ? "rgba(255,255,255,0.45)" : "rgba(255,255,255,0.18)" })}
         >
-          {minimized ? "▲" : "▼"}
+          {pinned ? "📌" : "📍"}
         </button>
+
+        {/* Open in new window */}
         <button
-          onClick={() => setOpen(false)}
-          title="Fechar"
-          style={{ ...iconBtnStyle, background: "rgba(255,80,80,0.35)" }}
+          onMouseDown={(e) => e.stopPropagation()}
+          onClick={openPopup}
+          title="Abrir em janela separada"
+          style={iconBtn()}
+        >
+          ↗
+        </button>
+
+        {/* Minimize / restore */}
+        <button
+          onMouseDown={(e) => e.stopPropagation()}
+          onClick={(e) => { e.stopPropagation(); setMinimized((m) => !m); }}
+          title={isMinimized ? "Expandir" : "Minimizar"}
+          style={iconBtn()}
+        >
+          {isMinimized ? "▲" : "▼"}
+        </button>
+
+        {/* Close */}
+        <button
+          onMouseDown={(e) => e.stopPropagation()}
+          onClick={(e) => { e.stopPropagation(); setOpen(false); }}
+          title="Fechar (Ctrl+Shift+V para reabrir)"
+          style={iconBtn({ background: "rgba(220,50,50,0.5)" })}
         >
           ✕
         </button>
       </div>
 
       {/* ——— Body ——— */}
-      {!minimized && (
+      {!isMinimized && (
         <div
           style={{
             padding: "10px 12px 12px",
             display: "flex",
             flexDirection: "column",
             gap: 8,
-            maxHeight: "calc(100vh - 160px)",
+            maxHeight: "min(520px, calc(100vh - 140px))",
             overflow: "hidden",
           }}
         >
@@ -185,46 +239,30 @@ export default function VocabOverlay() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             style={{
-              width: "100%",
-              padding: "7px 13px",
+              width: "100%", padding: "7px 13px",
               border: "1.5px solid var(--border)",
               borderRadius: "var(--radius-full)",
-              fontSize: 13,
-              fontFamily: "inherit",
-              outline: "none",
-              background: "var(--bg)",
-              color: "var(--text)",
+              fontSize: 13, fontFamily: "inherit",
+              outline: "none", background: "var(--bg)", color: "var(--text)",
+              transition: "border-color 0.15s",
             }}
             onFocus={(e) => (e.target.style.borderColor = "var(--primary-light)")}
             onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
           />
 
           {/* Category filters */}
-          <div
-            style={{
-              display: "flex",
-              gap: 5,
-              overflowX: "auto",
-              paddingBottom: 3,
-              scrollbarWidth: "none",
-            }}
-          >
+          <div style={{ display: "flex", gap: 5, overflowX: "auto", paddingBottom: 2, scrollbarWidth: "none" }}>
             {["Todos", ...categorias].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setCatFilter(cat)}
                 style={{
-                  padding: "3px 9px",
-                  borderRadius: "var(--radius-full)",
+                  padding: "3px 9px", borderRadius: "var(--radius-full)",
                   border: "1.5px solid var(--border)",
                   background: catFilter === cat ? "var(--primary)" : "var(--bg-card)",
                   color: catFilter === cat ? "white" : "var(--text-muted)",
-                  fontSize: 11,
-                  fontFamily: "inherit",
-                  cursor: "pointer",
-                  whiteSpace: "nowrap",
-                  flexShrink: 0,
-                  transition: "var(--transition)",
+                  fontSize: 11, fontFamily: "inherit", cursor: "pointer",
+                  whiteSpace: "nowrap", flexShrink: 0, transition: "var(--transition)",
                 }}
               >
                 {cat}
@@ -233,7 +271,7 @@ export default function VocabOverlay() {
           </div>
 
           {/* Count */}
-          <div style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: -2 }}>
+          <div style={{ fontSize: 11, color: "var(--text-muted)" }}>
             {filtered.length} resultado{filtered.length !== 1 ? "s" : ""}
           </div>
 
@@ -248,31 +286,26 @@ export default function VocabOverlay() {
                 </tr>
               </thead>
               <tbody>
-                {filtered.slice(0, 100).map((p) => {
+                {filtered.slice(0, 120).map((p) => {
                   const colors = CAT_COLORS[p.categoria] || { bg: "#f1f5f9", text: "#475569" };
                   return (
                     <tr
                       key={p.vn}
-                      style={{ borderBottom: "1px solid var(--border)" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.background = "#f8faff")}
+                      title={p.gramNote || ""}
+                      style={{ borderBottom: "1px solid var(--border)", cursor: "default" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = "#f0f4ff")}
                       onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
                     >
-                      <td style={{ padding: "6px 10px", fontWeight: 700, color: "var(--primary)", fontFamily: "inherit" }}>
+                      <td style={{ padding: "6px 10px", fontWeight: 700, color: "var(--primary)" }}>
                         {p.vn}
                       </td>
                       <td style={{ padding: "6px 10px", color: "var(--text)" }}>{p.pt}</td>
                       <td style={{ padding: "6px 10px" }}>
-                        <span
-                          style={{
-                            background: colors.bg,
-                            color: colors.text,
-                            padding: "2px 6px",
-                            borderRadius: "var(--radius-full)",
-                            fontSize: 10,
-                            fontWeight: 600,
-                            whiteSpace: "nowrap",
-                          }}
-                        >
+                        <span style={{
+                          background: colors.bg, color: colors.text,
+                          padding: "2px 6px", borderRadius: "var(--radius-full)",
+                          fontSize: 10, fontWeight: 600, whiteSpace: "nowrap",
+                        }}>
                           {p.categoria}
                         </span>
                       </td>
@@ -281,9 +314,9 @@ export default function VocabOverlay() {
                 })}
               </tbody>
             </table>
-            {filtered.length > 100 && (
+            {filtered.length > 120 && (
               <div style={{ textAlign: "center", padding: "8px 0", fontSize: 11, color: "var(--text-muted)" }}>
-                +{filtered.length - 100} resultados — refine a busca
+                +{filtered.length - 120} resultados — refine a busca
               </div>
             )}
           </div>
