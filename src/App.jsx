@@ -13,7 +13,11 @@ import GeminiChat    from "./components/GeminiChat";
 import Homework      from "./components/Homework";
 import HomeworkList  from "./components/HomeworkList";
 import PDFs          from "./components/PDFs";
+import VocabOverlay  from "./components/VocabOverlay";
 import { LangProvider, useLang } from "./contexts/LangContext";
+
+// Popup mode: open URL with ?mode=popup to get a standalone vocabulary window
+const IS_POPUP = new URLSearchParams(window.location.search).get("mode") === "popup";
 
 const TABS_OVERVIEW  = [{ id: "inicio", label: "Início",    icon: "🏠" }];
 const TABS_LEARN = [
@@ -118,6 +122,16 @@ function AppInner() {
         </div>
       </main>
       <GeminiChat />
+      <VocabOverlay />
+    </div>
+  );
+}
+
+// Standalone popup — shows only the vocabulary page in a minimal window
+function PopupApp() {
+  return (
+    <div style={{ padding: 20, maxWidth: 900, margin: "0 auto" }}>
+      <Vocabulario />
     </div>
   );
 }
@@ -125,7 +139,7 @@ function AppInner() {
 export default function App() {
   return (
     <LangProvider>
-      <AppInner />
+      {IS_POPUP ? <PopupApp /> : <AppInner />}
     </LangProvider>
   );
 }
